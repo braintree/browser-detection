@@ -1,0 +1,30 @@
+{
+  "name": "browser-detection",
+  "version": "1.0.0",
+  "description": "A small lib to detect browser compatibility for braintree products",
+  "main": "browser-detection.js",
+  "files": ["*.js"],
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.7.0",
+    "eslint-config-braintree": "^1.0.2",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braintree/browser-detection.git"
+  },
+  "keywords": [],
+  "author": "Braintree <code@getbraintree.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/braintree/browser-detection/issues"
+  },
+  "homepage": "https://github.com/braintree/browser-detection#readme"
+}
