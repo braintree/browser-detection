@@ -16,4 +16,3 @@ describe('isIe10', function () {
     expect(isIe10(AGENTS.ie9)).to.equal(false);
   });
 });
-
