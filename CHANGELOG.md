@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+## unreleased
+
+* Add `is-ios-safari` method
+
 ## 1.2.0 (2017-04-10)
 
 * Add `is-ie10` method
