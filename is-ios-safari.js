@@ -1,7 +1,7 @@
 'use strict';
 
 var isIos = require('./is-ios');
-var webkitRegexp = /WebKit/i;
+var webkitRegexp = /webkit/i;
 
 function isWebkit(ua) {
   return ua.match(webkitRegexp);
