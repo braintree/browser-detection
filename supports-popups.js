@@ -3,7 +3,7 @@
 var MINIMUM_SUPPORTED_CHROME_IOS_VERSION = 48;
 
 var isAndroid = require('./is-android');
-var isIos = require('./is-ios');
+var isIosWebview = require('./is-ios-webview');
 
 function isUnsupportedIosChrome(ua) {
   var match, version;
@@ -23,22 +23,6 @@ function isUnsupportedIosChrome(ua) {
 function isOperaMini(ua) {
   ua = ua || global.navigator.userAgent;
   return ua.indexOf('Opera Mini') > -1;
-}
-
-// The Google Search iOS app is technically a webview and doesn't support popups.
-function isGoogleSearchApp(ua) {
-  return /\bGSA\b/.test(ua);
-}
-
-function isIosWebview(ua) {
-  ua = ua || global.navigator.userAgent;
-  if (isIos(ua)) {
-    if (isGoogleSearchApp(ua)) {
-      return true;
-    }
-    return /.+AppleWebKit(?!.*Safari)/.test(ua);
-  }
-  return false;
 }
 
 function isAndroidWebview(ua) {
