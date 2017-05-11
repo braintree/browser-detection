@@ -5,6 +5,7 @@ var isChrome = require('./is-chrome');
 var isIe9 = require('./is-ie9');
 var isIe10 = require('./is-ie10');
 var isIos = require('./is-ios');
+var isIosSafari = require('./is-ios-safari');
 var isIosWebview = require('./is-ios-webview');
 var supportsPopups = require('./supports-popups');
 
@@ -14,6 +15,7 @@ module.exports = {
   isIe9: isIe9,
   isIe10: isIe10,
   isIos: isIos,
+  isIosSafari: isIosSafari,
   isIosWebview: isIosWebview,
   supportsPopups: supportsPopups
 };

@@ -3,6 +3,7 @@
 ## UNRELEASED
 
 * Add `is-ios-webview` method
+* Add `is-ios-safari` method
 
 ## 1.2.0 (2017-04-10)
 
