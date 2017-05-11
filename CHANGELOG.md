@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-## UNRELEASED
+## 1.3.0 (2017-04-11)
 
 * Add `is-ios-webview` method
 * Add `is-ios-safari` method
