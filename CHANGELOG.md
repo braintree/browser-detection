@@ -1,5 +1,10 @@
 # Browser Detection - Release Notes
 
+## Unreleased
+
+* Add `is-ios-uiwebview` method
+* Add `is-ios-wkwebview` method
+
 ## 1.3.0 (2017-04-11)
 
 * Add `is-ios-webview` method
