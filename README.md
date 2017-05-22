@@ -14,6 +14,8 @@ browserDetection.isIe9();
 browserDetection.isIe10();
 browserDetection.isIos();
 browserDetection.isIosWebview();
+browserDetection.isIosUIWebView();
+browserDetection.isIosWKWebView();
 browserDetection.supportsPopups();
 ```
 
@@ -26,6 +28,8 @@ var isIe9 = require('browser-detection/is-ie9');
 var isIe10 = require('browser-detection/is-ie10');
 var isIos = require('browser-detection/is-ios');
 var isIosWebview = require('browser-detection/is-ios-webview');
+var isIosUIWebview = require('browser-detection/is-ios-uiwebview');
+var isIosWKWebview = require('browser-detection/is-ios-wkwebview');
 var supportsPopups = require('browser-detection/supports-popups');
 ```
 
