@@ -1,7 +1,7 @@
 Browser Detection
 =================
 
-A utility for detecing browser support for Braintree libs.
+A utility for detecting browser support for Braintree libs.
 
 ## Example
 
