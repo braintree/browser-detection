@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+## UNRELEASED
+
+* publish to npm as scoped package `@braintree/browser-detection`
+
 ## 1.4.0 (2017-05-22)
 
 * Add `is-ios-uiwebview` method
