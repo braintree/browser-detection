@@ -17,6 +17,7 @@ browserDetection.isIosSafari();
 browserDetection.isIosWebview();
 browserDetection.isIosUIWebView();
 browserDetection.isIosWKWebView();
+browserDetection.isMobileFirefox();
 browserDetection.supportsPopups();
 ```
 
@@ -32,6 +33,7 @@ var isIosSafari = require('browser-detection/is-ios-safari');
 var isIosWebview = require('browser-detection/is-ios-webview');
 var isIosUIWebview = require('browser-detection/is-ios-uiwebview');
 var isIosWKWebview = require('browser-detection/is-ios-wkwebview');
+var isMobileFirefox = require('browser-detection/is-mobile-firefox');
 var supportsPopups = require('browser-detection/supports-popups');
 ```
 
