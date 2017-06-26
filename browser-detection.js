@@ -10,6 +10,7 @@ var isIosUIWebview = require('./is-ios-uiwebview');
 var isIosWebview = require('./is-ios-webview');
 var isIosWKWebview = require('./is-ios-wkwebview');
 var isMobileFirefox = require('./is-mobile-firefox');
+var isSamsungBrowser = require('./is-samsung');
 var supportsPopups = require('./supports-popups');
 
 module.exports = {
@@ -23,5 +24,6 @@ module.exports = {
   isIosWebview: isIosWebview,
   isIosWKWebview: isIosWKWebview,
   isMobileFirefox: isMobileFirefox,
+  isSamsungBrowser: isSamsungBrowser,
   supportsPopups: supportsPopups
 };
