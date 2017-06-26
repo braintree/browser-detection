@@ -21,5 +21,29 @@ describe('isChrome', function () {
     expect(isChrome(AGENTS.pcChrome_27)).to.equal(true);
     expect(isChrome(AGENTS.pcChrome_41)).to.equal(true);
   });
+
+  it('returns true for Android Chromium-based WebViews in KitKat to Lollipop', function () {
+    expect(isChrome(AGENTS.androidChromeWebviewKitKatLollipop)).to.equal(true);
+  });
+
+  it('returns true for Android Chromium-based WebViews in Lollipop and above', function () {
+    expect(isChrome(AGENTS.androidChromeWebviewLollipopAndAbove)).to.equal(true);
+  });
+
+  it('returns false for old Android Chromium-based WebViews', function () {
+    expect(isChrome(AGENTS.androidChromeWebviewOld)).to.equal(false);
+  });
+
+  it('returns false for other browsers', function () {
+    var ua;
+
+    Object.keys(AGENTS).forEach(function (key) {
+      if (!/chrome/i.test(key)) {
+        ua = AGENTS[key];
+        console.log(key);
+        expect(isChrome(ua)).to.equal(false);
+      }
+    });
+  });
 });
 
