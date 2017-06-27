@@ -2,5 +2,5 @@
 
 module.exports = function isChrome(ua) {
   ua = ua || navigator.userAgent;
-  return (ua.indexOf('Chrome') !== -1 || ua.indexOf('CriOS') !== -1) && !/samsung/i.test(ua);
+  return (ua.indexOf('Chrome') !== -1 || ua.indexOf('CriOS') !== -1) && !/SamsungBrowser/.test(ua);
 };

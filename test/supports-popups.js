@@ -23,7 +23,7 @@ describe('supportsPopups', function () {
     var keysToSkip = [
       'androidOperaMini',
       'iPhoneUnsupportedChrome',
-      'androidSamsungOld'
+      'androidSamsungUnsupported'
     ];
 
     for (key in AGENTS) {
@@ -56,7 +56,7 @@ describe('supportsPopups', function () {
     expect(supportsPopups(AGENTS.iPhoneSupportedChrome)).to.equal(true);
   });
 
-  it('returns false for old Samsung browser', function () {
-    expect(supportsPopups(AGENTS.androidSamsungOld)).to.equal(false);
+  it('returns false for old unsupported Samsung browser', function () {
+    expect(supportsPopups(AGENTS.androidSamsungUnsupported)).to.equal(false);
   });
 });

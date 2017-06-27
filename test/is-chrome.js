@@ -38,9 +38,8 @@ describe('isChrome', function () {
     var ua;
 
     Object.keys(AGENTS).forEach(function (key) {
-      if (!/chrome/i.test(key)) {
+      if (!/chrome/i.test(key) && !/unsupported/i.test(key)) {
         ua = AGENTS[key];
-        console.log(key);
         expect(isChrome(ua)).to.equal(false);
       }
     });

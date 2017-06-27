@@ -8,8 +8,8 @@ describe('isSamsungBrowser', function () {
     expect(isSamsungBrowser(AGENTS.androidSamsung)).to.equal(true);
   });
 
-  it('returns false for old Samsung browsers', function () {
-    expect(isSamsungBrowser(AGENTS.androidSamsungOld)).to.equal(false);
+  it('returns false for old unsupported Samsung browsers', function () {
+    expect(isSamsungBrowser(AGENTS.androidSamsungUnsupported)).to.equal(false);
   });
 
   it('returns false for Samsung webviews', function () {
