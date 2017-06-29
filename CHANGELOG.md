@@ -1,5 +1,11 @@
 # Browser Detection - Release Notes
 
+## Unreleased
+
+* Add isIe
+* Add isIe11
+* Add isEdge
+
 ## 1.4.1 (2017-06-01)
 
 * publish to npm as scoped package `@braintree/browser-detection`
