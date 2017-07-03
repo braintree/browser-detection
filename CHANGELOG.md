@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-## Unreleased
+## 1.5.0 (2017-07-03)
 
 * Add isIe
 * Add isIe11
