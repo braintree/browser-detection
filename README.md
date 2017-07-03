@@ -10,8 +10,11 @@ var browserDetection = require('browser-detection');
 
 browserDetection.isAndroid();
 browserDetection.isChrome();
+browserDetection.isEdge();
+browserDetection.isIe();
 browserDetection.isIe9();
 browserDetection.isIe10();
+browserDetection.isIe11();
 browserDetection.isIos();
 browserDetection.isIosSafari();
 browserDetection.isIosWebview();
@@ -25,8 +28,11 @@ To reduce build sizes, you can require just the modules you need:
 ```js
 var isAndroid = require('browser-detection/is-android');
 var isChrome = require('browser-detection/is-chrome');
+var isEdge = require('browser-detection/is-edge');
+var isIe = require('browser-detection/is-ie');
 var isIe9 = require('browser-detection/is-ie9');
 var isIe10 = require('browser-detection/is-ie10');
+var isIe11 = require('browser-detection/is-ie11');
 var isIos = require('browser-detection/is-ios');
 var isIosSafari = require('browser-detection/is-ios-safari');
 var isIosWebview = require('browser-detection/is-ios-webview');
