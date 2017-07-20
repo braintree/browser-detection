@@ -1,5 +1,10 @@
 # Browser Detection - Release Notes
 
+## Unreleased
+
+* Add isSamsungBrowser
+* Add isMobileFirefox
+
 ## 1.5.0 (2017-07-03)
 
 * Add isIe
