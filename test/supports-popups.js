@@ -23,7 +23,10 @@ describe('supportsPopups', function () {
     var keysToSkip = [
       'androidOperaMini',
       'iPhoneUnsupportedChrome',
-      'androidSamsungUnsupported'
+      'androidSamsungUnsupported',
+      'iPadFirefox',
+      'iPodFirefox',
+      'iPhoneFirefox'
     ];
 
     for (key in AGENTS) {
