@@ -1,5 +1,13 @@
 # Browser Detection - Release Notes
 
+## Unreleased
+
+* Correct is-chrome to not return true on edge browser
+* Correct supports-popups to not return true on iOS Firefox
+* Add isSamsungBrowser
+* Add isMobileFirefox
+* Add isIosFirefox
+
 ## 1.5.0 (2017-07-03)
 
 * Add isIe

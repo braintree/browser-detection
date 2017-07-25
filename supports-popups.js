@@ -3,7 +3,10 @@
 var MINIMUM_SUPPORTED_CHROME_IOS_VERSION = 48;
 
 var isAndroid = require('./is-android');
+var isIosFirefox = require('./is-ios-firefox');
 var isIosWebview = require('./is-ios-webview');
+var isChrome = require('./is-chrome');
+var isSamsungBrowser = require('./is-samsung');
 
 function isUnsupportedIosChrome(ua) {
   var match, version;
@@ -35,7 +38,11 @@ function isAndroidWebview(ua) {
   return false;
 }
 
+function isOldSamsungBrowserOrSamsungWebview(ua) {
+  return !isChrome(ua) && !isSamsungBrowser(ua) && /samsung/i.test(ua);
+}
+
 module.exports = function supportsPopups(ua) {
   ua = ua || global.navigator.userAgent;
-  return !(isIosWebview(ua) || isAndroidWebview(ua) || isOperaMini(ua) || isUnsupportedIosChrome(ua));
+  return !(isIosWebview(ua) || isIosFirefox(ua) || isAndroidWebview(ua) || isOperaMini(ua) || isUnsupportedIosChrome(ua) || isOldSamsungBrowserOrSamsungWebview(ua));
 };

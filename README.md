@@ -16,10 +16,13 @@ browserDetection.isIe9();
 browserDetection.isIe10();
 browserDetection.isIe11();
 browserDetection.isIos();
+browserDetection.isIosFirefox();
 browserDetection.isIosSafari();
 browserDetection.isIosWebview();
 browserDetection.isIosUIWebView();
 browserDetection.isIosWKWebView();
+browserDetection.isMobileFirefox();
+browserDetection.isSamsungBrowser();
 browserDetection.supportsPopups();
 ```
 
@@ -34,10 +37,13 @@ var isIe9 = require('browser-detection/is-ie9');
 var isIe10 = require('browser-detection/is-ie10');
 var isIe11 = require('browser-detection/is-ie11');
 var isIos = require('browser-detection/is-ios');
+var isIosFirefox = require('browser-detection/is-ios-firefox');
 var isIosSafari = require('browser-detection/is-ios-safari');
 var isIosWebview = require('browser-detection/is-ios-webview');
 var isIosUIWebview = require('browser-detection/is-ios-uiwebview');
 var isIosWKWebview = require('browser-detection/is-ios-wkwebview');
+var isMobileFirefox = require('browser-detection/is-mobile-firefox');
+var isSamsungBrowser = require('browser-detection/is-samsung');
 var supportsPopups = require('browser-detection/supports-popups');
 ```
 

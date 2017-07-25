@@ -25,7 +25,7 @@ describe('isIos', function () {
   });
 
   it('returns true for ipad', function () {
-    expect(isIos(AGENTS.iPadLowercase)).to.equal(true);
+    expect(isIos(AGENTS.iPadChromeLowercase)).to.equal(true);
   });
 
   it('returns false for non-iOS browsers', function () {

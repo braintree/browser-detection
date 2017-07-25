@@ -12,9 +12,9 @@ describe('isAndroid', function () {
   });
 
   it('returns true for Android webviews', function () {
-    expect(isAndroid(AGENTS.androidWebviewOld)).to.equal(true);
-    expect(isAndroid(AGENTS.androidWebviewKitKatLollipop)).to.equal(true);
-    expect(isAndroid(AGENTS.androidWebviewLollipopAndAbove)).to.equal(true);
+    expect(isAndroid(AGENTS.androidChromeWebviewOld)).to.equal(true);
+    expect(isAndroid(AGENTS.androidChromeWebviewKitKatLollipop)).to.equal(true);
+    expect(isAndroid(AGENTS.androidChromeWebviewLollipopAndAbove)).to.equal(true);
   });
 
   it('returns false for non-Android browsers', function () {
