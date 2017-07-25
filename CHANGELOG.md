@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-## Unreleased
+## 1.6.0 (2017-07-25)
 
 * Correct is-chrome to not return true on edge browser
 * Correct supports-popups to not return true on iOS Firefox
