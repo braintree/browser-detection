@@ -16,6 +16,7 @@ var isIosWKWebview = require('./is-ios-wkwebview');
 var isMobileFirefox = require('./is-mobile-firefox');
 var isSamsungBrowser = require('./is-samsung');
 var supportsPopups = require('./supports-popups');
+var supportsPaymentRequestApi = require('./supports-payment-request-api');
 
 module.exports = {
   isAndroid: isAndroid,
@@ -33,5 +34,6 @@ module.exports = {
   isIosWKWebview: isIosWKWebview,
   isMobileFirefox: isMobileFirefox,
   isSamsungBrowser: isSamsungBrowser,
+  supportsPaymentRequestApi: supportsPaymentRequestApi,
   supportsPopups: supportsPopups
 };
