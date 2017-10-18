@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+## 1.7.0 (2017-10-18)
+
+* Add supportsPaymentRequestApi
+
 ## 1.6.0 (2017-07-25)
 
 * Correct is-chrome to not return true on edge browser
