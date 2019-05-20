@@ -13,7 +13,9 @@ module.exports = function isIosWebview(ua) {
     if (isGoogleSearchApp(ua)) {
       return true;
     }
+
     return /.+AppleWebKit(?!.*Safari)/.test(ua);
   }
+
   return false;
 };

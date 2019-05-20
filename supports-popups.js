@@ -25,6 +25,7 @@ function isUnsupportedIosChrome(ua) {
 
 function isOperaMini(ua) {
   ua = ua || global.navigator.userAgent;
+
   return ua.indexOf('Opera Mini') > -1;
 }
 
@@ -35,6 +36,7 @@ function isAndroidWebview(ua) {
   if (isAndroid(ua)) {
     return androidWebviewRegExp.test(ua) && !isOperaMini(ua);
   }
+
   return false;
 }
 
@@ -44,5 +46,13 @@ function isOldSamsungBrowserOrSamsungWebview(ua) {
 
 module.exports = function supportsPopups(ua) {
   ua = ua || global.navigator.userAgent;
-  return !(isIosWebview(ua) || isIosFirefox(ua) || isAndroidWebview(ua) || isOperaMini(ua) || isUnsupportedIosChrome(ua) || isOldSamsungBrowserOrSamsungWebview(ua));
+
+  return !(
+    isIosWebview(ua) ||
+    isIosFirefox(ua) ||
+    isAndroidWebview(ua) ||
+    isOperaMini(ua) ||
+    isUnsupportedIosChrome(ua) ||
+    isOldSamsungBrowserOrSamsungWebview(ua)
+  );
 };
