@@ -16,7 +16,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "mocha"
+    "test": "mocha",
+    "version": "./version"
   },
   "repository": {
     "type": "git",
