@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-## Unreleased
+## v1.8.0 (2019-08-07)
 
 * Detect Chrome OS
 * Fix README typo for iOS
