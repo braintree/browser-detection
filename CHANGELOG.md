@@ -1,5 +1,11 @@
 # Browser Detection - Release Notes
 
+## Unreleased
+
+* Detect Chrome OS
+* Fix README typo for iOS
+* Update README code samples to use `const`
+
 ## 1.7.0 (2017-10-18)
 
 * Add supportsPaymentRequestApi

@@ -1,6 +1,7 @@
 'use strict';
 
 var isAndroid = require('./is-android');
+var isChromeOS = require('./is-chrome-os');
 var isChrome = require('./is-chrome');
 var isIe = require('./is-ie');
 var isIe9 = require('./is-ie9');
@@ -20,6 +21,7 @@ var supportsPaymentRequestApi = require('./supports-payment-request-api');
 
 module.exports = {
   isAndroid: isAndroid,
+  isChromeOS: isChromeOS,
   isChrome: isChrome,
   isIe: isIe,
   isIe9: isIe9,
