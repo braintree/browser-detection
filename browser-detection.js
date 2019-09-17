@@ -8,6 +8,7 @@ var isIe9 = require('./is-ie9');
 var isIe10 = require('./is-ie10');
 var isIe11 = require('./is-ie11');
 var isEdge = require('./is-edge');
+var isFirefox = require('./is-firefox');
 var isIos = require('./is-ios');
 var isIosFirefox = require('./is-ios-firefox');
 var isIosSafari = require('./is-ios-safari');
@@ -28,6 +29,7 @@ module.exports = {
   isIe10: isIe10,
   isIe11: isIe11,
   isEdge: isEdge,
+  isFirefox: isFirefox,
   isIos: isIos,
   isIosFirefox: isIosFirefox,
   isIosSafari: isIosSafari,
