@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-## Unreleased
+## v1.9.0 (2019-09-18)
 
 * Add `is-firefox` method
 
