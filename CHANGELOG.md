@@ -1,32 +1,32 @@
 # Browser Detection - Release Notes
 
-## unreleased
+## Unreleased
 
-* add isFirefox
+* Add `is-firefox` method
 
 ## v1.8.0 (2019-08-07)
 
-* Detect Chrome OS
+* Add `is-chrome-os` method
 * Fix README typo for iOS
 * Update README code samples to use `const`
 
 ## 1.7.0 (2017-10-18)
 
-* Add supportsPaymentRequestApi
+* Add `supports-payment-request-api` method
 
 ## 1.6.0 (2017-07-25)
 
 * Correct is-chrome to not return true on edge browser
 * Correct supports-popups to not return true on iOS Firefox
-* Add isSamsungBrowser
-* Add isMobileFirefox
-* Add isIosFirefox
+* Add `is-samsung-browser` method
+* Add `is-mobile-firefox` method
+* Add `is-ios-firefox` method
 
 ## 1.5.0 (2017-07-03)
 
-* Add isIe
-* Add isIe11
-* Add isEdge
+* Add `is-ie` method
+* Add `is-ie11` method
+* Add `is-edge` method
 
 ## 1.4.1 (2017-06-01)
 
