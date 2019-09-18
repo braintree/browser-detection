@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+## unreleased
+
+* add isFirefox
+
 ## v1.8.0 (2019-08-07)
 
 * Detect Chrome OS
