@@ -1,29 +1,22 @@
 
-var fs = require('fs');
-var path = require('path');
-var browserDetection = require('../browser-detection');
+const fs = require('fs');
+const path = require('path');
+const browserDetection = require('../browser-detection');
 
-describe('browserDetection', function () {
-  it('includes a prop for each js file in the root directory', function () {
-    var functions = Object.keys(browserDetection);
-    var files = fs.readdirSync('./');
-    var jsFileNames = files.filter(function (file) {
-      return path.extname(file) === '.js' &&
-        file !== 'browser-detection.js';
-    });
-    var jsFiles = jsFileNames.map(function (file) {
-      return require('../' + file);
-    });
+describe('browserDetection', () => {
+  test('includes a prop for each js file in the root directory', () => {
+    const functions = Object.keys(browserDetection);
+    const files = fs.readdirSync('./');
+    const jsFileNames = files.filter(file => path.extname(file) === '.js' && file !== 'browser-detection.js');
+    const jsFiles = jsFileNames.map(file => require(`../${file}`));
 
     expect(jsFiles.length).toBeGreaterThan(0);
 
-    jsFiles.forEach(function (module) {
-      var found = functions.find(function (prop) {
-        return module === browserDetection[prop];
-      });
+    jsFiles.forEach(module => {
+      const found = functions.find(prop => module === browserDetection[prop]);
 
       if (!found) {
-        throw new Error(module + ' was not found on browserDetection');
+        throw new Error(`${module} was not found on browserDetection`);
       }
     });
   });
