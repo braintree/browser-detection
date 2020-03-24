@@ -1,11 +1,10 @@
-'use strict';
 
 var isChromeOS = require('../is-chrome-os');
 var AGENTS = require('./helpers/user-agents');
 
 describe('isChromeOS', function () {
   it('returns true for ChromeOS Chrome', function () {
-    expect(isChromeOS(AGENTS.chromeOsChrome)).to.equal(true);
+    expect(isChromeOS(AGENTS.chromeOsChrome)).toBe(true);
   });
 
   it.skip('returns true for ChromeOS [some other browser]', function () {
@@ -22,7 +21,7 @@ describe('isChromeOS', function () {
       if (!/chromeOS/i.test(key)) {
         ua = AGENTS[key];
         try {
-          expect(isChromeOS(ua)).to.equal(false);
+          expect(isChromeOS(ua)).toBe(false);
         } catch (err) {
           throw new Error('key: ' + key + ', ua: ' + ua + '. caused a failure');
         }

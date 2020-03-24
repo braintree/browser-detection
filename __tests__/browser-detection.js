@@ -1,4 +1,3 @@
-'use strict';
 
 var fs = require('fs');
 var path = require('path');
@@ -16,7 +15,7 @@ describe('browserDetection', function () {
       return require('../' + file);
     });
 
-    expect(jsFiles.length).to.be.greaterThan(0);
+    expect(jsFiles.length).toBeGreaterThan(0);
 
     jsFiles.forEach(function (module) {
       var found = functions.find(function (prop) {

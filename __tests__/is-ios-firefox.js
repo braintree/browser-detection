@@ -1,27 +1,26 @@
-'use strict';
 
-var isMobileFirefox = require('../is-mobile-firefox');
+var isIosFirefox = require('../is-ios-firefox');
 var AGENTS = require('./helpers/user-agents');
 
-describe('isMobileFirefox', function () {
+describe('isIosFirefox', function () {
   it('returns true for iPhone Firefox', function () {
-    expect(isMobileFirefox(AGENTS.iPhoneFirefox)).to.equal(true);
+    expect(isIosFirefox(AGENTS.iPhoneFirefox)).toBe(true);
   });
 
   it('returns true for iPad Firefox', function () {
-    expect(isMobileFirefox(AGENTS.iPadFirefox)).to.equal(true);
+    expect(isIosFirefox(AGENTS.iPadFirefox)).toBe(true);
   });
 
   it('returns true for iPod Firefox', function () {
-    expect(isMobileFirefox(AGENTS.iPodFirefox)).to.equal(true);
+    expect(isIosFirefox(AGENTS.iPodFirefox)).toBe(true);
   });
 
-  it('returns true for Android phone Firefox', function () {
-    expect(isMobileFirefox(AGENTS.androidPhoneFirefox)).to.equal(true);
+  it('returns false for Android phone Firefox', function () {
+    expect(isIosFirefox(AGENTS.androidPhoneFirefox)).toBe(false);
   });
 
-  it('returns true for Android tablet Firefox', function () {
-    expect(isMobileFirefox(AGENTS.androidTabletFirefox)).to.equal(true);
+  it('returns false for Android tablet Firefox', function () {
+    expect(isIosFirefox(AGENTS.androidTabletFirefox)).toBe(false);
   });
 
   it('returns false for desktop Firefox', function () {
@@ -30,7 +29,7 @@ describe('isMobileFirefox', function () {
     Object.keys(AGENTS).forEach(function (key) {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && /firefox/i.test(key)) {
         ua = AGENTS[key];
-        expect(isMobileFirefox(ua)).to.equal(false);
+        expect(isIosFirefox(ua)).toBe(false);
       }
     });
   });
@@ -41,7 +40,7 @@ describe('isMobileFirefox', function () {
     Object.keys(AGENTS).forEach(function (key) {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && !/firefox/i.test(key)) {
         ua = AGENTS[key];
-        expect(isMobileFirefox(ua)).to.equal(false);
+        expect(isIosFirefox(ua)).toBe(false);
       }
     });
   });

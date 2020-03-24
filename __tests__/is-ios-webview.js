@@ -1,4 +1,3 @@
-'use strict';
 
 var isIosWebview = require('../is-ios-webview');
 var AGENTS = require('./helpers/user-agents');
@@ -13,7 +12,7 @@ describe('isIosWebview', function () {
       }
       if (/webview/i.test(key) && !/android/i.test(key)) {
         ua = AGENTS[key];
-        expect(isIosWebview(ua)).to.equal(true);
+        expect(isIosWebview(ua)).toBe(true);
       }
     }
   });
@@ -27,13 +26,13 @@ describe('isIosWebview', function () {
       }
       if (/webview/i.test(key) && /android/i.test(key)) {
         ua = AGENTS[key];
-        expect(isIosWebview(ua)).to.equal(false);
+        expect(isIosWebview(ua)).toBe(false);
       }
     }
   });
 
   it('returns false for desktop Safari', function () {
-    expect(isIosWebview(AGENTS.macSafari7_0_2)).to.equal(false);
+    expect(isIosWebview(AGENTS.macSafari7_0_2)).toBe(false);
   });
 
   it('returns false for non-webviews', function () {
@@ -46,7 +45,7 @@ describe('isIosWebview', function () {
       if (!/webview/i.test(key)) {
         ua = AGENTS[key];
         try {
-          expect(isIosWebview(ua)).to.equal(false);
+          expect(isIosWebview(ua)).toBe(false);
         } catch (e) {
           throw key;
         }
@@ -55,6 +54,6 @@ describe('isIosWebview', function () {
   });
 
   it('returns true for Google Search App', function () {
-    expect(isIosWebview(AGENTS.iPhoneGoogleSearchAppWebview)).to.equal(true);
+    expect(isIosWebview(AGENTS.iPhoneGoogleSearchAppWebview)).toBe(true);
   });
 });

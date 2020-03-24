@@ -1,4 +1,3 @@
-'use strict';
 
 var supportsPopups = require('../supports-popups');
 var AGENTS = require('./helpers/user-agents');
@@ -13,7 +12,7 @@ describe('supportsPopups', function () {
       }
       if (/webview/i.test(key)) {
         ua = AGENTS[key];
-        expect(supportsPopups(ua)).to.equal(false);
+        expect(supportsPopups(ua)).toBe(false);
       }
     }
   });
@@ -38,28 +37,28 @@ describe('supportsPopups', function () {
       }
       if (!/webview/i.test(key)) {
         ua = AGENTS[key];
-        expect(supportsPopups(ua)).to.equal(true);
+        expect(supportsPopups(ua)).toBe(true);
       }
     }
   });
 
   it('returns false for Google Search App', function () {
-    expect(supportsPopups(AGENTS.iPhoneGoogleSearchAppWebview)).to.equal(false);
+    expect(supportsPopups(AGENTS.iPhoneGoogleSearchAppWebview)).toBe(false);
   });
 
   it('returns false for Opera Mini', function () {
-    expect(supportsPopups(AGENTS.androidOperaMini)).to.equal(false);
+    expect(supportsPopups(AGENTS.androidOperaMini)).toBe(false);
   });
 
   it('returns false for iOS Chrome less than 48', function () {
-    expect(supportsPopups(AGENTS.iPhoneUnsupportedChrome)).to.equal(false);
+    expect(supportsPopups(AGENTS.iPhoneUnsupportedChrome)).toBe(false);
   });
 
   it('returns true for iOS Chrome greather than 48', function () {
-    expect(supportsPopups(AGENTS.iPhoneSupportedChrome)).to.equal(true);
+    expect(supportsPopups(AGENTS.iPhoneSupportedChrome)).toBe(true);
   });
 
   it('returns false for old unsupported Samsung browser', function () {
-    expect(supportsPopups(AGENTS.androidSamsungUnsupported)).to.equal(false);
+    expect(supportsPopups(AGENTS.androidSamsungUnsupported)).toBe(false);
   });
 });

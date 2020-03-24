@@ -1,27 +1,26 @@
-'use strict';
 
-var isIosFirefox = require('../is-ios-firefox');
+var isMobileFirefox = require('../is-mobile-firefox');
 var AGENTS = require('./helpers/user-agents');
 
-describe('isIosFirefox', function () {
+describe('isMobileFirefox', function () {
   it('returns true for iPhone Firefox', function () {
-    expect(isIosFirefox(AGENTS.iPhoneFirefox)).to.equal(true);
+    expect(isMobileFirefox(AGENTS.iPhoneFirefox)).toBe(true);
   });
 
   it('returns true for iPad Firefox', function () {
-    expect(isIosFirefox(AGENTS.iPadFirefox)).to.equal(true);
+    expect(isMobileFirefox(AGENTS.iPadFirefox)).toBe(true);
   });
 
   it('returns true for iPod Firefox', function () {
-    expect(isIosFirefox(AGENTS.iPodFirefox)).to.equal(true);
+    expect(isMobileFirefox(AGENTS.iPodFirefox)).toBe(true);
   });
 
-  it('returns false for Android phone Firefox', function () {
-    expect(isIosFirefox(AGENTS.androidPhoneFirefox)).to.equal(false);
+  it('returns true for Android phone Firefox', function () {
+    expect(isMobileFirefox(AGENTS.androidPhoneFirefox)).toBe(true);
   });
 
-  it('returns false for Android tablet Firefox', function () {
-    expect(isIosFirefox(AGENTS.androidTabletFirefox)).to.equal(false);
+  it('returns true for Android tablet Firefox', function () {
+    expect(isMobileFirefox(AGENTS.androidTabletFirefox)).toBe(true);
   });
 
   it('returns false for desktop Firefox', function () {
@@ -30,7 +29,7 @@ describe('isIosFirefox', function () {
     Object.keys(AGENTS).forEach(function (key) {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && /firefox/i.test(key)) {
         ua = AGENTS[key];
-        expect(isIosFirefox(ua)).to.equal(false);
+        expect(isMobileFirefox(ua)).toBe(false);
       }
     });
   });
@@ -41,7 +40,7 @@ describe('isIosFirefox', function () {
     Object.keys(AGENTS).forEach(function (key) {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && !/firefox/i.test(key)) {
         ua = AGENTS[key];
-        expect(isIosFirefox(ua)).to.equal(false);
+        expect(isMobileFirefox(ua)).toBe(false);
       }
     });
   });

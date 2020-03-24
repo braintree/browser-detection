@@ -1,4 +1,3 @@
-'use strict';
 
 var supportsPaymentRequestApi = require('../supports-payment-request-api');
 var AGENTS = require('./helpers/user-agents');
@@ -26,7 +25,7 @@ describe('supportsPaymentRequestApi', function () {
 
       ua = AGENTS[key];
 
-      expect(supportsPaymentRequestApi(ua)).to.equal(false);
+      expect(supportsPaymentRequestApi(ua)).toBe(false);
     }
   });
 
@@ -44,26 +43,26 @@ describe('supportsPaymentRequestApi', function () {
 
       ua = AGENTS[key];
 
-      expect(supportsPaymentRequestApi(ua)).to.equal(true);
+      expect(supportsPaymentRequestApi(ua)).toBe(true);
     }
   });
 
   it('returns true for Desktop Chrome version 61 or greater', function () {
-    expect(supportsPaymentRequestApi(AGENTS.pcChrome_61)).to.equal(true);
+    expect(supportsPaymentRequestApi(AGENTS.pcChrome_61)).toBe(true);
   });
 
   it('returns true for Android Chrome version 61 or greater', function () {
-    expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome_61)).to.equal(true);
+    expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome_61)).toBe(true);
   });
 
   it('returns false for Desktop Chrome versions less than 61', function () {
-    expect(supportsPaymentRequestApi(AGENTS.pcChrome_60)).to.equal(false);
-    expect(supportsPaymentRequestApi(AGENTS.pcChrome_41)).to.equal(false);
-    expect(supportsPaymentRequestApi(AGENTS.pcChrome_27)).to.equal(false);
+    expect(supportsPaymentRequestApi(AGENTS.pcChrome_60)).toBe(false);
+    expect(supportsPaymentRequestApi(AGENTS.pcChrome_41)).toBe(false);
+    expect(supportsPaymentRequestApi(AGENTS.pcChrome_27)).toBe(false);
   });
 
   it('returns false for Android Chrome versions less than 61', function () {
-    expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome)).to.equal(false);
-    expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome_60)).to.equal(false);
+    expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome)).toBe(false);
+    expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome_60)).toBe(false);
   });
 });
