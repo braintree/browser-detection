@@ -1,11 +1,11 @@
 
-var isIosWKWebview = require('../is-ios-wkwebview');
-var AGENTS = require('./helpers/user-agents');
+const isIosWKWebview = require('../is-ios-wkwebview');
+const AGENTS = require('./helpers/user-agents');
 
-describe('isIosWKWebview', function () {
-  var key, ua;
+describe('isIosWKWebview', () => {
+  let key, ua;
 
-  it('returns true for iOS webviews when statusbar.visible is true', function () {
+  it('returns true for iOS webviews when statusbar.visible is true', () => {
     for (key in AGENTS) {
       if (!AGENTS.hasOwnProperty(key)) {
         continue;
@@ -21,7 +21,7 @@ describe('isIosWKWebview', function () {
     }
   });
 
-  it('returns false for iOS webviews when statusbar.visible is false', function () {
+  it('returns false for iOS webviews when statusbar.visible is false', () => {
     for (key in AGENTS) {
       if (!AGENTS.hasOwnProperty(key)) {
         continue;

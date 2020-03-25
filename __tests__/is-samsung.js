@@ -1,24 +1,24 @@
 
-var isSamsungBrowser = require('../is-samsung');
-var AGENTS = require('./helpers/user-agents');
+const isSamsungBrowser = require('../is-samsung');
+const AGENTS = require('./helpers/user-agents');
 
-describe('isSamsungBrowser', function () {
-  it('returns true for Samsung browser', function () {
+describe('isSamsungBrowser', () => {
+  it('returns true for Samsung browser', () => {
     expect(isSamsungBrowser(AGENTS.androidSamsung)).toBe(true);
   });
 
-  it('returns false for old unsupported Samsung browsers', function () {
+  it('returns false for old unsupported Samsung browsers', () => {
     expect(isSamsungBrowser(AGENTS.androidSamsungUnsupported)).toBe(false);
   });
 
-  it('returns false for Samsung webviews', function () {
+  it('returns false for Samsung webviews', () => {
     expect(isSamsungBrowser(AGENTS.androidSamsungWebview)).toBe(false);
   });
 
-  it('returns false for all other browsers', function () {
-    var ua;
+  it('returns false for all other browsers', () => {
+    let ua;
 
-    Object.keys(AGENTS).forEach(function (key) {
+    Object.keys(AGENTS).forEach(key => {
       if (!/samsung/i.test(key)) {
         ua = AGENTS[key];
         expect(isSamsungBrowser(ua)).toBe(false);

@@ -1,32 +1,32 @@
 
-var isMobileFirefox = require('../is-mobile-firefox');
-var AGENTS = require('./helpers/user-agents');
+const isMobileFirefox = require('../is-mobile-firefox');
+const AGENTS = require('./helpers/user-agents');
 
-describe('isMobileFirefox', function () {
-  it('returns true for iPhone Firefox', function () {
+describe('isMobileFirefox', () => {
+  it('returns true for iPhone Firefox', () => {
     expect(isMobileFirefox(AGENTS.iPhoneFirefox)).toBe(true);
   });
 
-  it('returns true for iPad Firefox', function () {
+  it('returns true for iPad Firefox', () => {
     expect(isMobileFirefox(AGENTS.iPadFirefox)).toBe(true);
   });
 
-  it('returns true for iPod Firefox', function () {
+  it('returns true for iPod Firefox', () => {
     expect(isMobileFirefox(AGENTS.iPodFirefox)).toBe(true);
   });
 
-  it('returns true for Android phone Firefox', function () {
+  it('returns true for Android phone Firefox', () => {
     expect(isMobileFirefox(AGENTS.androidPhoneFirefox)).toBe(true);
   });
 
-  it('returns true for Android tablet Firefox', function () {
+  it('returns true for Android tablet Firefox', () => {
     expect(isMobileFirefox(AGENTS.androidTabletFirefox)).toBe(true);
   });
 
-  it('returns false for desktop Firefox', function () {
-    var ua;
+  it('returns false for desktop Firefox', () => {
+    let ua;
 
-    Object.keys(AGENTS).forEach(function (key) {
+    Object.keys(AGENTS).forEach(key => {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && /firefox/i.test(key)) {
         ua = AGENTS[key];
         expect(isMobileFirefox(ua)).toBe(false);
@@ -34,10 +34,10 @@ describe('isMobileFirefox', function () {
     });
   });
 
-  it('returns false for all other browsers', function () {
-    var ua;
+  it('returns false for all other browsers', () => {
+    let ua;
 
-    Object.keys(AGENTS).forEach(function (key) {
+    Object.keys(AGENTS).forEach(key => {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && !/firefox/i.test(key)) {
         ua = AGENTS[key];
         expect(isMobileFirefox(ua)).toBe(false);

@@ -1,29 +1,29 @@
 
-var isChromeOS = require('../is-chrome-os');
-var AGENTS = require('./helpers/user-agents');
+const isChromeOS = require('../is-chrome-os');
+const AGENTS = require('./helpers/user-agents');
 
-describe('isChromeOS', function () {
-  it('returns true for ChromeOS Chrome', function () {
+describe('isChromeOS', () => {
+  it('returns true for ChromeOS Chrome', () => {
     expect(isChromeOS(AGENTS.chromeOsChrome)).toBe(true);
   });
 
-  it.skip('returns true for ChromeOS [some other browser]', function () {
+  test.skip('returns true for ChromeOS [some other browser]', () => {
     // Currently any other browser for ChromeOS is actually a
     // questionably functional Android port. For example Firefox & Brave
     // have Android user agents, and Edge installs but doesn't actually
     // work.
   });
 
-  it('returns false for non-ChromeOS browsers', function () {
-    var ua;
+  it('returns false for non-ChromeOS browsers', () => {
+    let ua;
 
-    Object.keys(AGENTS).forEach(function (key) {
+    Object.keys(AGENTS).forEach(key => {
       if (!/chromeOS/i.test(key)) {
         ua = AGENTS[key];
         try {
           expect(isChromeOS(ua)).toBe(false);
         } catch (err) {
-          throw new Error('key: ' + key + ', ua: ' + ua + '. caused a failure');
+          throw new Error(`key: ${key}, ua: ${ua}. caused a failure`);
         }
       }
     });

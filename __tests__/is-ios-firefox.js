@@ -1,32 +1,32 @@
 
-var isIosFirefox = require('../is-ios-firefox');
-var AGENTS = require('./helpers/user-agents');
+const isIosFirefox = require('../is-ios-firefox');
+const AGENTS = require('./helpers/user-agents');
 
-describe('isIosFirefox', function () {
-  it('returns true for iPhone Firefox', function () {
+describe('isIosFirefox', () => {
+  it('returns true for iPhone Firefox', () => {
     expect(isIosFirefox(AGENTS.iPhoneFirefox)).toBe(true);
   });
 
-  it('returns true for iPad Firefox', function () {
+  it('returns true for iPad Firefox', () => {
     expect(isIosFirefox(AGENTS.iPadFirefox)).toBe(true);
   });
 
-  it('returns true for iPod Firefox', function () {
+  it('returns true for iPod Firefox', () => {
     expect(isIosFirefox(AGENTS.iPodFirefox)).toBe(true);
   });
 
-  it('returns false for Android phone Firefox', function () {
+  it('returns false for Android phone Firefox', () => {
     expect(isIosFirefox(AGENTS.androidPhoneFirefox)).toBe(false);
   });
 
-  it('returns false for Android tablet Firefox', function () {
+  it('returns false for Android tablet Firefox', () => {
     expect(isIosFirefox(AGENTS.androidTabletFirefox)).toBe(false);
   });
 
-  it('returns false for desktop Firefox', function () {
-    var ua;
+  it('returns false for desktop Firefox', () => {
+    let ua;
 
-    Object.keys(AGENTS).forEach(function (key) {
+    Object.keys(AGENTS).forEach(key => {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && /firefox/i.test(key)) {
         ua = AGENTS[key];
         expect(isIosFirefox(ua)).toBe(false);
@@ -34,10 +34,10 @@ describe('isIosFirefox', function () {
     });
   });
 
-  it('returns false for all other browsers', function () {
-    var ua;
+  it('returns false for all other browsers', () => {
+    let ua;
 
-    Object.keys(AGENTS).forEach(function (key) {
+    Object.keys(AGENTS).forEach(key => {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && !/firefox/i.test(key)) {
         ua = AGENTS[key];
         expect(isIosFirefox(ua)).toBe(false);
