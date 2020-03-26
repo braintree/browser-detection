@@ -1,12 +1,11 @@
-'use strict';
 
-var isIosUIWebview = require('../is-ios-uiwebview');
-var AGENTS = require('./helpers/user-agents');
+const isIosWKWebview = require('../is-ios-wkwebview');
+const AGENTS = require('./helpers/user-agents');
 
-describe('isIosUIWebview', function () {
-  var key, ua;
+describe('isIosWKWebview', () => {
+  let key, ua;
 
-  it('returns true for iOS webviews when statusbar.visible is false', function () {
+  it('returns true for iOS webviews when statusbar.visible is true', () => {
     for (key in AGENTS) {
       if (!AGENTS.hasOwnProperty(key)) {
         continue;
@@ -14,7 +13,7 @@ describe('isIosUIWebview', function () {
       if (/webview/i.test(key) && !/android/i.test(key)) {
         ua = AGENTS[key];
         try {
-          expect(isIosUIWebview(ua, false)).to.equal(true);
+          expect(isIosWKWebview(ua, true)).toBe(true);
         } catch (e) {
           throw key;
         }
@@ -22,7 +21,7 @@ describe('isIosUIWebview', function () {
     }
   });
 
-  it('returns false for iOS webviews when statusbar.visible is true', function () {
+  it('returns false for iOS webviews when statusbar.visible is false', () => {
     for (key in AGENTS) {
       if (!AGENTS.hasOwnProperty(key)) {
         continue;
@@ -30,7 +29,7 @@ describe('isIosUIWebview', function () {
       if (/webview/i.test(key) && !/android/i.test(key)) {
         ua = AGENTS[key];
         try {
-          expect(isIosUIWebview(ua, true)).to.equal(false);
+          expect(isIosWKWebview(ua, false)).toBe(false);
         } catch (e) {
           throw key;
         }
