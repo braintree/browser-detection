@@ -1,7 +1,1 @@
-'use strict';
-
-module.exports = function isIe11(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('Trident/7') !== -1;
-};
+module.exports = require("./dist/is-ie11");

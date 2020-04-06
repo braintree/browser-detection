@@ -1,23 +1,22 @@
+import isChromeOS from "../is-chrome-os";
+import AGENTS = require("./helpers/user-agents.json");
 
-const isChromeOS = require('../is-chrome-os');
-const AGENTS = require('./helpers/user-agents');
-
-describe('isChromeOS', () => {
-  it('returns true for ChromeOS Chrome', () => {
+describe("isChromeOS", () => {
+  it("returns true for ChromeOS Chrome", () => {
     expect(isChromeOS(AGENTS.chromeOsChrome)).toBe(true);
   });
 
-  test.skip('returns true for ChromeOS [some other browser]', () => {
+  test.skip("returns true for ChromeOS [some other browser]", () => {
     // Currently any other browser for ChromeOS is actually a
     // questionably functional Android port. For example Firefox & Brave
     // have Android user agents, and Edge installs but doesn't actually
     // work.
   });
 
-  it('returns false for non-ChromeOS browsers', () => {
+  it("returns false for non-ChromeOS browsers", () => {
     let ua;
 
-    Object.keys(AGENTS).forEach(key => {
+    Object.keys(AGENTS).forEach((key) => {
       if (!/chromeOS/i.test(key)) {
         ua = AGENTS[key];
         try {
@@ -29,4 +28,3 @@ describe('isChromeOS', () => {
     });
   });
 });
-
