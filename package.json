@@ -3,6 +3,7 @@
   "version": "1.9.0",
   "description": "A small lib to detect browser compatibility for braintree products",
   "main": "dist/browser-detection.js",
+  "types": "dist/browser-detection.d.ts",
   "files": [
     "*.js"
   ],
@@ -20,7 +21,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "prebuild": "prettier --write .",
-    "build": "tsc",
+    "build": "tsc --declaration",
     "lint": "eslint --ext js,ts .",
     "posttest": "npm run lint",
     "pretest": "npm run build",
