@@ -18,6 +18,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "prebuild": "prettier --write .",
     "build": "tsc",
     "lint": "eslint --ext js,ts .",
