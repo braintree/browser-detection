@@ -1,4 +1,4 @@
-export default function isChromeOS(ua): boolean {
+export default function isChromeOS(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return /CrOS/i.test(ua);

@@ -6,7 +6,7 @@ import isIosWebview from "./is-ios-webview";
 import isChrome from "./is-chrome";
 import isSamsungBrowser from "./is-samsung";
 
-function isUnsupportedIosChrome(ua): boolean {
+function isUnsupportedIosChrome(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   const match = ua.match(/CriOS\/(\d+)\./);
@@ -20,13 +20,13 @@ function isUnsupportedIosChrome(ua): boolean {
   return version < MINIMUM_SUPPORTED_CHROME_IOS_VERSION;
 }
 
-function isOperaMini(ua): boolean {
+function isOperaMini(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return ua.indexOf("Opera Mini") > -1;
 }
 
-function isAndroidWebview(ua): boolean {
+function isAndroidWebview(ua?: string): boolean {
   const androidWebviewRegExp = /Version\/[\d\.]+/;
 
   ua = ua || window.navigator.userAgent;
@@ -37,11 +37,11 @@ function isAndroidWebview(ua): boolean {
   return false;
 }
 
-function isOldSamsungBrowserOrSamsungWebview(ua): boolean {
+function isOldSamsungBrowserOrSamsungWebview(ua?: string): boolean {
   return !isChrome(ua) && !isSamsungBrowser(ua) && /samsung/i.test(ua);
 }
 
-export default function supportsPopups(ua): boolean {
+export default function supportsPopups(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return !(
