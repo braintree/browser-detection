@@ -27,7 +27,7 @@ function isOperaMini(ua?: string): boolean {
 }
 
 function isAndroidWebview(ua?: string): boolean {
-  const androidWebviewRegExp = /Version\/[\d\.]+/;
+  const androidWebviewRegExp = /Version\/[\d.]+/;
 
   ua = ua || window.navigator.userAgent;
   if (isAndroid(ua)) {

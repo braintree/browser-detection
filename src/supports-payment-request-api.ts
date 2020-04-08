@@ -23,7 +23,7 @@ export default function supportsPaymentRequestApi(ua?: string): boolean {
 
   if (!isChrome(ua)) {
     // if browser is not chrome based, but has Payment Request API
-    // this means that it implimented the API after it was finalized
+    // this means that it implemented the API after it was finalized
     return true;
   }
 
