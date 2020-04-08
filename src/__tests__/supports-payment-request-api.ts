@@ -5,7 +5,7 @@ describe("supportsPaymentRequestApi", () => {
   beforeEach(() => {
     window.PaymentRequest = function () {
       // noop
-    } as any;
+    } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
   });
 
   it("returns false if Payment Request object does not exist", () => {
