@@ -1,6 +1,6 @@
 language: node_js
 services:
-- xvfb
+  - xvfb
 notifications:
   email: false
   slack:

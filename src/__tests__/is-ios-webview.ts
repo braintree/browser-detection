@@ -1,9 +1,8 @@
+import isIosWebview from "../is-ios-webview";
+import AGENTS = require("./helpers/user-agents.json");
 
-const isIosWebview = require('../is-ios-webview');
-const AGENTS = require('./helpers/user-agents');
-
-describe('isIosWebview', () => {
-  it('returns true for iOS webviews', () => {
+describe("isIosWebview", () => {
+  it("returns true for iOS webviews", () => {
     let key, ua;
 
     for (key in AGENTS) {
@@ -17,7 +16,7 @@ describe('isIosWebview', () => {
     }
   });
 
-  it('returns true for Android webviews', () => {
+  it("returns true for Android webviews", () => {
     let key, ua;
 
     for (key in AGENTS) {
@@ -31,11 +30,11 @@ describe('isIosWebview', () => {
     }
   });
 
-  it('returns false for desktop Safari', () => {
+  it("returns false for desktop Safari", () => {
     expect(isIosWebview(AGENTS.macSafari7_0_2)).toBe(false);
   });
 
-  it('returns false for non-webviews', () => {
+  it("returns false for non-webviews", () => {
     let key, ua;
 
     for (key in AGENTS) {
@@ -53,7 +52,7 @@ describe('isIosWebview', () => {
     }
   });
 
-  it('returns true for Google Search App', () => {
+  it("returns true for Google Search App", () => {
     expect(isIosWebview(AGENTS.iPhoneGoogleSearchAppWebview)).toBe(true);
   });
 });
