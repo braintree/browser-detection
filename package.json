@@ -40,6 +40,11 @@
   },
   "homepage": "https://github.com/braintree/browser-detection#readme",
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "src/__tests__/tsconfig.json"
+      }
+    }
   }
 }

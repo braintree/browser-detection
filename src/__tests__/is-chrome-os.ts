@@ -7,10 +7,12 @@ describe("isChromeOS", () => {
   });
 
   test.skip("returns true for ChromeOS [some other browser]", () => {
-    // Currently any other browser for ChromeOS is actually a
-    // questionably functional Android port. For example Firefox & Brave
-    // have Android user agents, and Edge installs but doesn't actually
-    // work.
+    /**
+     * Currently any other browser for ChromeOS is actually a
+     * questionably functional Android port. For example Firefox & Brave
+     * have Android user agents, and Edge installs but doesn't actually
+     * work.
+     * */
   });
 
   it("returns false for non-ChromeOS browsers", () => {

@@ -38,7 +38,7 @@ function isAndroidWebview(ua?: string): boolean {
 }
 
 function isOldSamsungBrowserOrSamsungWebview(ua?: string): boolean {
-  return !isChrome(ua) && !isSamsungBrowser(ua) && /samsung/i.test(ua);
+  return !isChrome(ua) && !isSamsungBrowser(ua) && /samsung/i.test(ua || "");
 }
 
 export default function supportsPopups(ua?: string): boolean {

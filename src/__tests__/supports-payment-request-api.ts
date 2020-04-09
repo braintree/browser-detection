@@ -3,9 +3,8 @@ import AGENTS = require("./helpers/user-agents.json");
 
 describe("supportsPaymentRequestApi", () => {
   beforeEach(() => {
-    window.PaymentRequest = function () {
-      // noop
-    } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    window.PaymentRequest = (() => {}) as any; // eslint-disable-line @typescript-eslint/no-explicit-any
   });
 
   it("returns false if Payment Request object does not exist", () => {
