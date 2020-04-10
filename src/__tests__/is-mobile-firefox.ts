@@ -1,5 +1,7 @@
 import isMobileFirefox from "../is-mobile-firefox";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isMobileFirefox", () => {
   it("returns true for iPhone Firefox", () => {

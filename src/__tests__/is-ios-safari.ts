@@ -1,5 +1,7 @@
 import isIosSafari from "../is-ios-safari";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isIosSafari", () => {
   it("returns true for iOS Safari", () => {

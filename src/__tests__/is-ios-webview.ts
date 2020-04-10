@@ -1,5 +1,7 @@
 import isIosWebview from "../is-ios-webview";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isIosWebview", () => {
   it("returns true for iOS webviews", () => {

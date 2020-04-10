@@ -1,5 +1,7 @@
 import supportsPaymentRequestApi from "../supports-payment-request-api";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("supportsPaymentRequestApi", () => {
   beforeEach(() => {

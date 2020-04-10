@@ -1,5 +1,7 @@
 import isIe10 from "../is-ie10";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isIe10", () => {
   it("false when chrome", () => {

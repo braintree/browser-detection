@@ -1,3 +1,11 @@
 {
-  "extends": "braintree/client"
+  "extends": "braintree/client",
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0
+      }
+    }
+  ]
 }

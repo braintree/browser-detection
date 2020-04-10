@@ -1,5 +1,7 @@
 import isIe11 from "../is-ie11";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isIe11", () => {
   it("returns false when chrome", () => {

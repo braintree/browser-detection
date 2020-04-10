@@ -1,6 +1,9 @@
 import fs = require("fs");
 import path = require("path");
-import browserDetection = require("../../dist/browser-detection");
+
+const browserDetection: {
+  [key: string]: Function;
+} = require("../../dist/browser-detection");
 
 describe("browserDetection", () => {
   it("includes a prop for each js file in the root directory", () => {

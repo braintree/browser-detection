@@ -1,5 +1,7 @@
 import isSamsungBrowser from "../is-samsung";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isSamsungBrowser", () => {
   it("returns true for Samsung browser", () => {
@@ -15,11 +17,9 @@ describe("isSamsungBrowser", () => {
   });
 
   it("returns false for all other browsers", () => {
-    let ua;
-
     Object.keys(AGENTS).forEach((key) => {
       if (!/samsung/i.test(key)) {
-        ua = AGENTS[key];
+        const ua = AGENTS[key];
         expect(isSamsungBrowser(ua)).toBe(false);
       }
     });

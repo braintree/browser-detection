@@ -1,5 +1,7 @@
 import isIe9 from "../is-ie9";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isIe9", () => {
   it("false when chrome", () => {

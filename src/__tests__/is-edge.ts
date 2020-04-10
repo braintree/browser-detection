@@ -1,5 +1,7 @@
 import isEdge from "../is-edge";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isEdge", () => {
   it("returns false when chrome", () => {

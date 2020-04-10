@@ -1,5 +1,7 @@
 import isAndroid from "../is-android";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isAndroid", () => {
   it("returns true for Android browsers", () => {

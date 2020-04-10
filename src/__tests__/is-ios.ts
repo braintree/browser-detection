@@ -1,5 +1,7 @@
 import isIos from "../is-ios";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isIos", () => {
   it("returns true for an iPad", () => {

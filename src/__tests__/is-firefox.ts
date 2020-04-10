@@ -1,5 +1,7 @@
 import isFirefox from "../is-firefox";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("isFirefox", () => {
   it("returns true for android phone Firefox", () => {

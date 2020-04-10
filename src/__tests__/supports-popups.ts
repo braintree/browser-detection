@@ -1,5 +1,7 @@
 import supportsPopups from "../supports-popups";
-import AGENTS = require("./helpers/user-agents.json");
+const AGENTS: {
+  [key: string]: string;
+} = require("./helpers/user-agents.json");
 
 describe("supportsPopups", () => {
   it("returns false for webviews", () => {
