@@ -1,4 +1,5 @@
-import isIosWebview from "../is-ios-webview";
+import isIosWebview = require("../is-ios-webview");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

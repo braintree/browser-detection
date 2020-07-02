@@ -1,4 +1,5 @@
-import supportsPopups from "../supports-popups";
+import supportsPopups = require("../supports-popups");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

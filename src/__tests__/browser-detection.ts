@@ -12,7 +12,7 @@ describe("browserDetection", () => {
     const jsFileNames = files.filter(
       (file) => path.extname(file) === ".js" && file !== "browser-detection.js"
     );
-    const jsFiles = jsFileNames.map((file) => require(`../../${file}`).default);
+    const jsFiles = jsFileNames.map((file) => require(`../../${file}`));
 
     expect(jsFiles.length).toBeGreaterThan(0);
 

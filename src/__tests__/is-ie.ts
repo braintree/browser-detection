@@ -1,4 +1,5 @@
-import isIe from "../is-ie";
+import isIe = require("../is-ie");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");
