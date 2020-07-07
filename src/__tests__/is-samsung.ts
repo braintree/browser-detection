@@ -1,4 +1,5 @@
-import isSamsungBrowser from "../is-samsung";
+import isSamsungBrowser = require("../is-samsung");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

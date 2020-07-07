@@ -1,4 +1,5 @@
-import isIosFirefox from "../is-ios-firefox";
+import isIosFirefox = require("../is-ios-firefox");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

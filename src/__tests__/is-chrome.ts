@@ -1,4 +1,5 @@
-import isChrome from "../is-chrome";
+import isChrome = require("../is-chrome");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

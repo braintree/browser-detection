@@ -1,4 +1,5 @@
-import isChromeOS from "../is-chrome-os";
+import isChromeOS = require("../is-chrome-os");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

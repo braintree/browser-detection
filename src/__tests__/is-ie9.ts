@@ -1,4 +1,5 @@
-import isIe9 from "../is-ie9";
+import isIe9 = require("../is-ie9");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

@@ -1,4 +1,5 @@
-import isFirefox from "../is-firefox";
+import isFirefox = require("../is-firefox");
+
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");

@@ -1,7 +1,7 @@
-import isEdge from "./is-edge";
-import isSamsung from "./is-samsung";
+import isEdge = require("./is-edge");
+import isSamsung = require("./is-samsung");
 
-export default function isChrome(ua?: string): boolean {
+export = function isChrome(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (
@@ -9,4 +9,4 @@ export default function isChrome(ua?: string): boolean {
     !isEdge(ua) &&
     !isSamsung(ua)
   );
-}
+};

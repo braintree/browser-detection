@@ -1,19 +1,41 @@
-export { default as isAndroid } from "./is-android";
-export { default as isChromeOS } from "./is-chrome-os";
-export { default as isChrome } from "./is-chrome";
-export { default as isIe } from "./is-ie";
-export { default as isIe9 } from "./is-ie9";
-export { default as isIe10 } from "./is-ie10";
-export { default as isIe11 } from "./is-ie11";
-export { default as isEdge } from "./is-edge";
-export { default as isFirefox } from "./is-firefox";
-export { default as isIos } from "./is-ios";
-export { default as isIosFirefox } from "./is-ios-firefox";
-export { default as isIosSafari } from "./is-ios-safari";
-export { default as isIosUIWebview } from "./is-ios-uiwebview";
-export { default as isIosWebview } from "./is-ios-webview";
-export { default as isIosWKWebview } from "./is-ios-wkwebview";
-export { default as isMobileFirefox } from "./is-mobile-firefox";
-export { default as isSamsungBrowser } from "./is-samsung";
-export { default as supportsPopups } from "./supports-popups";
-export { default as supportsPaymentRequestApi } from "./supports-payment-request-api";
+import isAndroid = require("./is-android");
+import isChromeOS = require("./is-chrome-os");
+import isChrome = require("./is-chrome");
+import isIe = require("./is-ie");
+import isIe9 = require("./is-ie9");
+import isIe10 = require("./is-ie10");
+import isIe11 = require("./is-ie11");
+import isEdge = require("./is-edge");
+import isFirefox = require("./is-firefox");
+import isIos = require("./is-ios");
+import isIosFirefox = require("./is-ios-firefox");
+import isIosSafari = require("./is-ios-safari");
+import isIosUIWebview = require("./is-ios-uiwebview");
+import isIosWebview = require("./is-ios-webview");
+import isIosWKWebview = require("./is-ios-wkwebview");
+import isMobileFirefox = require("./is-mobile-firefox");
+import isSamsungBrowser = require("./is-samsung");
+import supportsPopups = require("./supports-popups");
+import supportsPaymentRequestApi = require("./supports-payment-request-api");
+
+export {
+  isAndroid,
+  isChromeOS,
+  isChrome,
+  isIe,
+  isIe9,
+  isIe10,
+  isIe11,
+  isEdge,
+  isFirefox,
+  isIos,
+  isIosFirefox,
+  isIosSafari,
+  isIosUIWebview,
+  isIosWebview,
+  isIosWKWebview,
+  isMobileFirefox,
+  isSamsungBrowser,
+  supportsPopups,
+  supportsPaymentRequestApi,
+};
