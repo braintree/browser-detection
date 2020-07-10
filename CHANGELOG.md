@@ -1,8 +1,8 @@
-# unreleased
+# Browser Detection - Release Notes
+
+# 1.10.0 (2020-07-10)
 
 - Add typescript types
-
-# Browser Detection - Release Notes
 
 ## v1.9.0 (2019-09-18)
 
