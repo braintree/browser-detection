@@ -2,7 +2,7 @@ import fs = require("fs");
 import path = require("path");
 
 const browserDetection: {
-  [key: string]: Function;
+  [key: string]: (ua: string) => boolean;
 } = require("../../dist/browser-detection");
 
 describe("browserDetection", () => {
