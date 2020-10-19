@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+# 1.10.1 (2020-10-19)
+
+- Fix issue where typescript declarations did not get published
+
 # 1.10.0 (2020-07-10)
 
 - Add typescript types

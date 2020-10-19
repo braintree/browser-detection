@@ -5,6 +5,7 @@
   "main": "dist/browser-detection.js",
   "types": "dist/browser-detection.d.ts",
   "files": [
+    "dist",
     "*.js"
   ],
   "dependencies": {},
