@@ -1,6 +1,6 @@
 {
   "name": "@braintree/browser-detection",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "A small lib to detect browser compatibility for braintree products",
   "main": "dist/browser-detection.js",
   "types": "dist/browser-detection.d.ts",
