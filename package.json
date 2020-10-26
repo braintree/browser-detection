@@ -41,6 +41,8 @@
   },
   "homepage": "https://github.com/braintree/browser-detection#readme",
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "restoreMocks": true,
+    "resetMocks": true
   }
 }

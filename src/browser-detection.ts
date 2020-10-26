@@ -15,6 +15,7 @@ import isIosWebview = require("./is-ios-webview");
 import isIosWKWebview = require("./is-ios-wkwebview");
 import isMobileFirefox = require("./is-mobile-firefox");
 import isSamsungBrowser = require("./is-samsung");
+import hasSoftwareKeyboard = require("./has-software-keyboard");
 import supportsPopups = require("./supports-popups");
 import supportsPaymentRequestApi = require("./supports-payment-request-api");
 
@@ -36,6 +37,7 @@ export {
   isIosWKWebview,
   isMobileFirefox,
   isSamsungBrowser,
+  hasSoftwareKeyboard,
   supportsPopups,
   supportsPaymentRequestApi,
 };

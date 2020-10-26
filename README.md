@@ -24,6 +24,7 @@ browserDetection.isIosUIWebview();
 browserDetection.isIosWKWebview();
 browserDetection.isMobileFirefox();
 browserDetection.isSamsungBrowser();
+browserDetection.hasSoftwareKeyboard();
 browserDetection.supportsPaymentRequestApi();
 browserDetection.supportsPopups();
 ```
@@ -48,6 +49,7 @@ const isIosUIWebview = require("browser-detection/is-ios-uiwebview");
 const isIosWKWebview = require("browser-detection/is-ios-wkwebview");
 const isMobileFirefox = require("browser-detection/is-mobile-firefox");
 const isSamsungBrowser = require("browser-detection/is-samsung");
+const hasSoftwareKeyboard = require("browser-detection/has-software-keyboard");
 const suportsPaymentRequestApi = require("browser-detection/supports-payment-request-api");
 const supportsPopups = require("browser-detection/supports-popups");
 ```
