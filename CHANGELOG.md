@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-# unreleased
+# 1.11.0 (2020-10-27)
 
 - Add `has-software-keyboard` method
 
