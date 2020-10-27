@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+# unreleased
+
+- Add `has-software-keyboard` method
+
 # 1.10.1 (2020-10-19)
 
 - Fix issue where typescript declarations did not get published
