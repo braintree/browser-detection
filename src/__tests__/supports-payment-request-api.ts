@@ -16,6 +16,8 @@ describe("supportsPaymentRequestApi", () => {
 
     const oldPaymentRequest = window.PaymentRequest;
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     delete window.PaymentRequest;
 
     for (key in AGENTS) {
