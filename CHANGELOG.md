@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+# unreleased
+
+- Fix issue where `is-ios-safari` was returning `true` for iOS Firefox browsers
+
 # 1.11.0 (2020-10-27)
 
 - Add `has-software-keyboard` method

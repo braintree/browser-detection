@@ -19,6 +19,12 @@ describe("isIosSafari", () => {
     expect(isIosSafari(AGENTS.iPhoneSupportedChrome)).toBe(false);
   });
 
+  it("returns false for iOS Firefox", () => {
+    expect(isIosSafari(AGENTS.iPhoneFirefox)).toBe(false);
+    expect(isIosSafari(AGENTS.iPadFirefox)).toBe(false);
+    expect(isIosSafari(AGENTS.iPodFirefox)).toBe(false);
+  });
+
   it("returns false for Android Chrome", () => {
     expect(isIosSafari(AGENTS.androidPhoneChrome)).toBe(false);
   });
