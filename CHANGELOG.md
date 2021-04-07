@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-# unreleased
+# 1.11.1 (2021-04-07)
 
 - Fix issue where `is-ios-safari` was returning `true` for iOS Firefox browsers
 
