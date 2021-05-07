@@ -5,6 +5,7 @@ import isIosFirefox = require("./is-ios-firefox");
 import isIosWebview = require("./is-ios-webview");
 import isChrome = require("./is-chrome");
 import isSamsungBrowser = require("./is-samsung");
+import isDuckDuckGo = require("./is-duckduckgo");
 
 function isUnsupportedIosChrome(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
@@ -31,7 +32,9 @@ function isAndroidWebview(ua?: string): boolean {
 
   ua = ua || window.navigator.userAgent;
   if (isAndroid(ua)) {
-    return androidWebviewRegExp.test(ua) && !isOperaMini(ua);
+    return (
+      androidWebviewRegExp.test(ua) && !isOperaMini(ua) && !isDuckDuckGo(ua)
+    );
   }
 
   return false;
