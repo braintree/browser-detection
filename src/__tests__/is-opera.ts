@@ -9,6 +9,10 @@ describe("isOpera", () => {
     expect(isOpera(AGENTS.androidOpera)).toBe(true);
   });
 
+  it("returns true for iPhone Opera", () => {
+    expect(isOpera(AGENTS.iPhoneOperaWebview)).toBe(true);
+  });
+
   it("returns true for linux Opera", () => {
     expect(isOpera(AGENTS.linuxOpera)).toBe(true);
   });
