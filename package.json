@@ -10,14 +10,14 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^26.0.22",
-    "@types/node": "^14.14.41",
-    "eslint": "^7.24.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "eslint": "^7.27.0",
     "eslint-config-braintree": "^5.0.0-typescript-prep-rc.18",
-    "jest": "^26.6.3",
-    "prettier": "^2.2.1",
-    "ts-jest": "^26.5.5",
-    "typescript": "^4.2.4"
+    "jest": "^27.0.3",
+    "prettier": "^2.3.0",
+    "ts-jest": "^27.0.2",
+    "typescript": "^4.3.2"
   },
   "scripts": {
     "prepublishOnly": "npm run build",
@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/braintree/browser-detection#readme",
   "jest": {
+    "testEnvironment": "jsdom",
     "preset": "ts-jest",
     "restoreMocks": true,
     "resetMocks": true
