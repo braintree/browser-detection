@@ -1,5 +1,12 @@
 # Browser Detection - Release Notes
 
+# unreleased
+
+- Add `is-duckduckgo` method
+- Add `is-ios-google-search-app` method
+- Add `is-opera` method
+- Add `is-silk` method
+
 # 1.11.1 (2021-04-07)
 
 - Fix issue where `is-ios-safari` was returning `true` for iOS Firefox browsers

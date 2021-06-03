@@ -9,6 +9,10 @@ describe("isDuckDuckGo", () => {
     expect(isDuckDuckGo(AGENTS.androidDuckDuckGo)).toBe(true);
   });
 
+  it("returns true for iOS DuckDuckGo", () => {
+    expect(isDuckDuckGo(AGENTS.iPhoneDuckDuckGo)).toBe(true);
+  });
+
   it("returns false for all other browsers", () => {
     let ua;
 

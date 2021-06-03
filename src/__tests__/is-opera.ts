@@ -21,7 +21,7 @@ describe("isOpera", () => {
     expect(isOpera(AGENTS.macOpera)).toBe(true);
   });
 
-  it("returns true for pc Opera", () => {
+  it("returns true for windows Opera", () => {
     expect(isOpera(AGENTS.pcOpera)).toBe(true);
   });
 
