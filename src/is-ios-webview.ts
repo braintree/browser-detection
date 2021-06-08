@@ -1,14 +1,11 @@
 import isIos = require("./is-ios");
-
-// The Google Search iOS app is technically a webview and doesn't support popups.
-function isGoogleSearchApp(ua: string): boolean {
-  return /\bGSA\b/.test(ua);
-}
+import isIosGoogleSearchApp = require("./is-ios-google-search-app");
 
 export = function isIosWebview(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
   if (isIos(ua)) {
-    if (isGoogleSearchApp(ua)) {
+    // The Google Search iOS app is technically a webview and doesn't support popups.
+    if (isIosGoogleSearchApp(ua)) {
       return true;
     }
 
