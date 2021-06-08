@@ -1,11 +1,13 @@
 # Browser Detection - Release Notes
 
-# unreleased
+# 1.12.0 (2021-06-08)
 
 - Add `is-duckduckgo` method
 - Add `is-ios-google-search-app` method
 - Add `is-opera` method
 - Add `is-silk` method
+- Fix issue where `is-chrome` would incorrectly report `true` for DuckDuckGo and Silk browsers
+- Fix issue where `supports-popups` would incorrectly report `false` for DuckDuckGo
 
 # 1.11.1 (2021-04-07)
 
