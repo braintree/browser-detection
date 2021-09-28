@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+# 1.12.1 (2021-09-28)
+
+- Correct `is-ios-safari` to return `false` for the Facebook browser
+
 # 1.12.0 (2021-06-08)
 
 - Add `is-duckduckgo` method
