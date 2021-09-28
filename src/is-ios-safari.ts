@@ -11,6 +11,10 @@ export = function isIosSafari(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (
-    isIos(ua) && isWebkit(ua) && ua.indexOf("CriOS") === -1 && !isIosFirefox(ua)
+    isIos(ua) &&
+    isWebkit(ua) &&
+    ua.indexOf("CriOS") === -1 &&
+    !isIosFirefox(ua) &&
+    ua.indexOf("FBAN") === -1
   );
 };

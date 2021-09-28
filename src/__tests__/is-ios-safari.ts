@@ -19,6 +19,10 @@ describe("isIosSafari", () => {
     expect(isIosSafari(AGENTS.iPhoneSupportedChrome)).toBe(false);
   });
 
+  it("returns false for iOS Facebook", () => {
+    expect(isIosSafari(AGENTS.iPhoneFacebookWebview)).toBe(false);
+  });
+
   it("returns false for iOS Firefox", () => {
     expect(isIosSafari(AGENTS.iPhoneFirefox)).toBe(false);
     expect(isIosSafari(AGENTS.iPadFirefox)).toBe(false);
