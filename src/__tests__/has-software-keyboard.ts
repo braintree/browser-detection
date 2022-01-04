@@ -3,33 +3,31 @@ import isAndroid = require("../is-android");
 import isChromeOS = require("../is-chrome-os");
 import isIos = require("../is-ios");
 
-import { mocked } from "ts-jest/utils";
-
 jest.mock("../is-android");
 jest.mock("../is-chrome-os");
 jest.mock("../is-ios");
 
 describe("hasSoftwareKeyboard", () => {
   beforeEach(() => {
-    mocked(isIos).mockReturnValue(false);
-    mocked(isAndroid).mockReturnValue(false);
-    mocked(isChromeOS).mockReturnValue(false);
+    jest.mocked(isIos).mockReturnValue(false);
+    jest.mocked(isAndroid).mockReturnValue(false);
+    jest.mocked(isChromeOS).mockReturnValue(false);
   });
 
   it("returns true for ios", () => {
-    mocked(isIos).mockReturnValue(true);
+    jest.mocked(isIos).mockReturnValue(true);
 
     expect(hasSoftwareKeyboard()).toBe(true);
   });
 
   it("returns true for android", () => {
-    mocked(isAndroid).mockReturnValue(true);
+    jest.mocked(isAndroid).mockReturnValue(true);
 
     expect(hasSoftwareKeyboard()).toBe(true);
   });
 
   it("returns true for Chrome OS", () => {
-    mocked(isChromeOS).mockReturnValue(true);
+    jest.mocked(isChromeOS).mockReturnValue(true);
 
     expect(hasSoftwareKeyboard()).toBe(true);
   });
