@@ -11,8 +11,7 @@ export = function isIosWebview(ua?: string): boolean {
       return true;
     }
     
-    // return /.+AppleWebKit(?!.*Safari)/i.test(ua);
-    return /.+AppleWebKit(.*Version)/i.test(ua);
+    return /.+AppleWebKit(?!.*Safari)/i.test(ua) || /(AppleWebKit).*?(Version)(?!.*Mobile)/i.test(ua);
   }
 
   return false;
