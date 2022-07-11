@@ -8,8 +8,8 @@ export = function isIosWebview(ua?: string): boolean {
     if (isIosGoogleSearchApp(ua)) {
       return true;
     }
-
-    return /.+AppleWebKit(?!.*Safari)/.test(ua);
+    
+    return /.+AppleWebKit(?!.*Safari)/i.test(ua);
   }
 
   return false;
