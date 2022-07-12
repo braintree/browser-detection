@@ -1,12 +1,25 @@
-import isIosWebview = require("../is-ios-webview");
+import isIosWebview from "../is-ios-webview";
+
+declare global {
+  interface Window {
+    safari: any;
+  }
+}
 
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");
 
 describe("isIosWebview", () => {
+  beforeEach(() => {
+    window.safari = {
+      pushNotification: {},
+    };
+  });
+
   it("returns true for iOS webviews", () => {
     let key, ua;
+    window.safari = null;
 
     for (key in AGENTS) {
       if (!AGENTS.hasOwnProperty(key)) {
@@ -14,8 +27,6 @@ describe("isIosWebview", () => {
       }
       if (/webview/i.test(key) && !/android/i.test(key)) {
         ua = AGENTS[key];
-        console.log("key", key);
-
         expect(isIosWebview(ua)).toBe(true);
       }
     }
@@ -47,7 +58,8 @@ describe("isIosWebview", () => {
     expect(isIosWebview(AGENTS.iPhone_15_5Safari)).toBe(false);
   });
 
-  it.skip("returns true slackWebviewOnIphone example", () => {
+  it("returns true slackWebviewOnIphone example", () => {
+    window.safari = null;
     // This is a merchant-supplied user agent that exhibited the issue they have.
     // It appears that the user agent can return with `Safari` in it even if its a webview. Which breaks our regex since it asserts it
     // is a webview if it doesn't have safar after AppleWebKit

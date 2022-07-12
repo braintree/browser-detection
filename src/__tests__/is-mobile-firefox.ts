@@ -1,4 +1,4 @@
-import isMobileFirefox = require("../is-mobile-firefox");
+import isMobileFirefox from "../is-mobile-firefox";
 
 const AGENTS: {
   [key: string]: string;

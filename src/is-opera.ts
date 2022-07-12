@@ -1,4 +1,4 @@
-export = function isOpera(ua?: string): boolean {
+export default function isOpera(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (

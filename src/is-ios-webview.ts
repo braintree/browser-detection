@@ -1,23 +1,26 @@
-import isIos = require("./is-ios");
-import isIosGoogleSearchApp = require("./is-ios-google-search-app");
+import isIos from "./is-ios";
+import isIosGoogleSearchApp from "./is-ios-google-search-app";
 
-export = function isIosWebview(ua?: string): boolean {
+export default function isIosWebview(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
-  console.log("isIos(ua)", isIos(ua));
 
   if (isIos(ua)) {
     // The Google Search iOS app is technically a webview and doesn't support popups.
     if (isIosGoogleSearchApp(ua)) {
       return true;
     }
-    console.log(`ua`, ua);
-    console.log(`/.+AppleWebKit(?!.*Safari)/i.test(ua)`, /.+AppleWebKit(?!.*Safari)/i.test(ua));
-    console.log(`/(AppleWebKit).*?(Version)(?!.*Mobile)/i.test(ua)`, /(AppleWebKit).*?(Version)(?!.*Mobile)/i.test(ua));
+
+    const isOldWebview = /.+AppleWebKit(?!.*Safari)/i.test(ua);
+
+    if (isOldWebview) {
+      return isOldWebview;
+    }
+
     return (
-      /.+AppleWebKit(?!.*Safari)/i.test(ua) ||
-      /(AppleWebKit).*?(Version)/i.test(ua)
+      ua.indexOf("Safari") > -1 &&
+      (!window.safari || !window.safari.pushNotification)
     );
   }
 
   return false;
-};
+}
