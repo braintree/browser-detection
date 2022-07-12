@@ -54,15 +54,15 @@ describe("isIosWebview", () => {
     expect(isIosWebview(AGENTS.iPhoneWebviewLowercase)).toBe(true);
   });
 
-  it("returns false when using a browser on an iPhone example", () => {
+  it("returns false when using a browser on an iPhone using version 15.5", () => {
     expect(isIosWebview(AGENTS.iPhone_15_5Safari)).toBe(false);
   });
 
-  it("returns true slackWebviewOnIphone example", () => {
+  it("returns true iPhone on version 15.5 in a webview", () => {
     window.safari = null;
     // This is a merchant-supplied user agent that exhibited the issue they have.
-    // It appears that the user agent can return with `Safari` in it even if its a webview. Which breaks our regex since it asserts it
-    // is a webview if it doesn't have safari after AppleWebKit
+    // It appears that the user agent can return with `Safari` in it even if its a webview.
+    // This broke our prev regex since it had 'Safari' after 'AppleWebKit' and is a webview
     expect(isIosWebview(AGENTS.iPhone_15_5_Webview)).toBe(true);
   });
 

@@ -11,7 +11,9 @@ export = function isIosWebview(ua?: string): boolean {
     }
 
     return (
+      // Historically, a webview could be identified by the present of AppleWebKit and _no_ presence of Safari after.
       /.+AppleWebKit(?!.*Safari)/i.test(ua) ||
+      // A webview can now have 'Safari', but if it does, then we want to check the `safari` window prop as webviews won't have it.
       (ua.indexOf("Safari") > -1 &&
         (!window.safari || !window.safari.pushNotification))
     );

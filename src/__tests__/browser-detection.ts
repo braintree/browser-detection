@@ -20,7 +20,6 @@ describe("browserDetection", () => {
       const found = functions.find((prop) => module === browserDetection[prop]);
 
       if (!found) {
-        console.log(`module`, module);
         throw new Error(`${module} was not found on browserDetection`);
       }
     });
