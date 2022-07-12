@@ -10,15 +10,10 @@ export default function isIosWebview(ua?: string): boolean {
       return true;
     }
 
-    const isOldWebview = /.+AppleWebKit(?!.*Safari)/i.test(ua);
-
-    if (isOldWebview) {
-      return isOldWebview;
-    }
-
     return (
-      ua.indexOf("Safari") > -1 &&
-      (!window.safari || !window.safari.pushNotification)
+      /.+AppleWebKit(?!.*Safari)/i.test(ua) ||
+      (ua.indexOf("Safari") > -1 &&
+        (!window.safari || !window.safari.pushNotification))
     );
   }
 
