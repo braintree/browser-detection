@@ -1,4 +1,4 @@
-import isChrome from "./is-chrome";
+import isChrome = require("./is-chrome");
 
 const MINIMUM_SUPPORTED_CHROME_VERSION = 61;
 
@@ -14,7 +14,7 @@ function isSupportedChromeVersion(ua: string): boolean {
   return version >= MINIMUM_SUPPORTED_CHROME_VERSION;
 }
 
-export default function supportsPaymentRequestApi(ua?: string): boolean {
+export = function supportsPaymentRequestApi(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   if (!window.PaymentRequest) {

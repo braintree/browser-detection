@@ -1,11 +1,11 @@
 const MINIMUM_SUPPORTED_CHROME_IOS_VERSION = 48;
 
-import isAndroid from "./is-android";
-import isIosFirefox from "./is-ios-firefox";
-import isIosWebview from "./is-ios-webview";
-import isChrome from "./is-chrome";
-import isSamsungBrowser from "./is-samsung";
-import isDuckDuckGo from "./is-duckduckgo";
+import isAndroid = require("./is-android");
+import isIosFirefox = require("./is-ios-firefox");
+import isIosWebview = require("./is-ios-webview");
+import isChrome = require("./is-chrome");
+import isSamsungBrowser = require("./is-samsung");
+import isDuckDuckGo = require("./is-duckduckgo");
 
 function isUnsupportedIosChrome(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
@@ -44,7 +44,7 @@ function isOldSamsungBrowserOrSamsungWebview(ua: string): boolean {
   return !isChrome(ua) && !isSamsungBrowser(ua) && /samsung/i.test(ua);
 }
 
-export default function supportsPopups(ua?: string): boolean {
+export = function supportsPopups(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return !(

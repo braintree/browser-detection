@@ -1,10 +1,10 @@
-import isEdge from "./is-edge";
-import isSamsung from "./is-samsung";
-import isDuckDuckGo from "./is-duckduckgo";
-import isOpera from "./is-opera";
-import isSilk from "./is-silk";
+import isEdge = require("./is-edge");
+import isSamsung = require("./is-samsung");
+import isDuckDuckGo = require("./is-duckduckgo");
+import isOpera = require("./is-opera");
+import isSilk = require("./is-silk");
 
-export default function isChrome(ua?: string): boolean {
+export = function isChrome(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (

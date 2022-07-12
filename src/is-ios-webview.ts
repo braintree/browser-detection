@@ -1,7 +1,7 @@
-import isIos from "./is-ios";
-import isIosGoogleSearchApp from "./is-ios-google-search-app";
+import isIos = require("./is-ios");
+import isIosGoogleSearchApp = require("./is-ios-google-search-app");
 
-export default function isIosWebview(ua?: string): boolean {
+export = function isIosWebview(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   if (isIos(ua)) {
@@ -18,4 +18,4 @@ export default function isIosWebview(ua?: string): boolean {
   }
 
   return false;
-}
+};

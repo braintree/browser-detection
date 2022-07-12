@@ -1,7 +1,7 @@
-import isAndroid from "./is-android";
-import isChromeOS from "./is-chrome-os";
-import isIos from "./is-ios";
+import isAndroid = require("./is-android");
+import isChromeOS = require("./is-chrome-os");
+import isIos = require("./is-ios");
 
-export default function hasSoftwareKeyboard(): boolean {
+export = function hasSoftwareKeyboard(): boolean {
   return isAndroid() || isChromeOS() || isIos();
 };

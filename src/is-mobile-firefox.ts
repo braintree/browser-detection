@@ -1,7 +1,7 @@
-import isIosFirefox from "./is-ios-firefox";
-import isFirefox from "./is-firefox";
+import isIosFirefox = require("./is-ios-firefox");
+import isFirefox = require("./is-firefox");
 
-export default function isMobileFirefox(ua?: string): boolean {
+export = function isMobileFirefox(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (

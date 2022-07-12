@@ -1,4 +1,4 @@
-import isIosWebview from "../is-ios-webview";
+import isIosWebview = require("../is-ios-webview");
 
 declare global {
   interface Window {
@@ -62,7 +62,7 @@ describe("isIosWebview", () => {
     window.safari = null;
     // This is a merchant-supplied user agent that exhibited the issue they have.
     // It appears that the user agent can return with `Safari` in it even if its a webview. Which breaks our regex since it asserts it
-    // is a webview if it doesn't have safar after AppleWebKit
+    // is a webview if it doesn't have safari after AppleWebKit
     expect(isIosWebview(AGENTS.iPhone_15_5_Webview)).toBe(true);
   });
 
