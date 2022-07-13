@@ -4,6 +4,18 @@ const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");
 
+type WindowSafari = {
+  // Disabling rule here because we don't really care is on the safari object beyond 'pushNotifications'.
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  pushNotifications: any;
+  [key: string]: any;
+};
+declare global {
+  interface Window {
+    safari?: Partial<WindowSafari>;
+  }
+}
+
 describe("supportsPopups", () => {
   it("returns false for webviews", () => {
     let key, ua;
@@ -20,7 +32,7 @@ describe("supportsPopups", () => {
   });
 
   it("returns true for browsers", () => {
-    let key, ua;
+    let key: string, ua: string;
     const keysToSkip = [
       "androidOperaMini",
       "iPhoneUnsupportedChrome",
@@ -39,6 +51,13 @@ describe("supportsPopups", () => {
       }
       if (!/webview/i.test(key)) {
         ua = AGENTS[key];
+
+        if (key.includes("Safari")) {
+          window.safari = {
+            pushNotification: {},
+          };
+        }
+
         expect(supportsPopups(ua)).toBe(true);
       }
     }

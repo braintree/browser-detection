@@ -41,11 +41,7 @@ describe("isChrome", () => {
     Object.keys(AGENTS).forEach((key) => {
       if (!/chrome/i.test(key) && !/unsupported/i.test(key)) {
         ua = AGENTS[key];
-        try {
-          expect(isChrome(ua)).toBe(false);
-        } catch (err) {
-          throw new Error(`key: ${key}, ua: ${ua}. caused a failure`);
-        }
+        expect(isChrome(ua)).toBe(false);
       }
     });
   });
