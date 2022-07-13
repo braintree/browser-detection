@@ -17,7 +17,7 @@ describe("browserDetection", () => {
     expect(jsFiles.length).toBeGreaterThan(0);
 
     jsFiles.forEach((module) => {
-      const found = functions.find((prop) => module === browserDetection[prop]);
+      const found = functions.find((prop) => module.default === browserDetection[prop]);
 
       if (!found) {
         throw new Error(`${module} was not found on browserDetection`);
