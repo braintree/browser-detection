@@ -1,10 +1,14 @@
 import isIosWebview = require("../is-ios-webview");
 
+type WindowSafari = {
+  // Disabling rule here because we don't really care is on the safari object beyond 'pushNotifications'.
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  pushNotifications: any;
+  [key: string]: any;
+};
 declare global {
   interface Window {
-    // Disabling rule here because we don't really care is on the safari object.
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
-    safari: any;
+    safari?: Partial<WindowSafari>;
   }
 }
 
@@ -21,7 +25,8 @@ describe("isIosWebview", () => {
 
   it("returns true for iOS webviews", () => {
     let key, ua;
-    window.safari = null;
+    /* eslint-disable no-undefined */
+    window.safari = undefined;
 
     for (key in AGENTS) {
       if (!AGENTS.hasOwnProperty(key)) {
@@ -61,7 +66,8 @@ describe("isIosWebview", () => {
   });
 
   it("returns true iPhone on version 15.5 in a webview", () => {
-    window.safari = null;
+    /* eslint-disable no-undefined */
+    window.safari = undefined;
     // This is a merchant-supplied user agent that exhibited the issue they have.
     // It appears that the user agent can return with `Safari` in it even if its a webview.
     // This broke our prev regex since it had 'Safari' after 'AppleWebKit' and is a webview
