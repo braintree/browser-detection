@@ -1,4 +1,4 @@
-import isSamsungBrowser = require("../is-samsung");
+import isSamsungBrowser from "../is-samsung";
 
 const AGENTS: {
   [key: string]: string;

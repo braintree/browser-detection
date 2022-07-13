@@ -1,8 +1,14 @@
-import supportsPopups = require("../supports-popups");
+import supportsPopups from "../supports-popups";
 
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");
+
+declare global {
+  interface Window {
+    safari: any;
+  }
+}
 
 describe("supportsPopups", () => {
   it("returns false for webviews", () => {
@@ -20,7 +26,7 @@ describe("supportsPopups", () => {
   });
 
   it("returns true for browsers", () => {
-    let key, ua;
+    let key: string, ua: string;
     const keysToSkip = [
       "androidOperaMini",
       "iPhoneUnsupportedChrome",
@@ -39,6 +45,13 @@ describe("supportsPopups", () => {
       }
       if (!/webview/i.test(key)) {
         ua = AGENTS[key];
+
+        if (key.includes("Safari")) {
+          window.safari = {
+            pushNotification: {},
+          };
+        }
+
         expect(supportsPopups(ua)).toBe(true);
       }
     }

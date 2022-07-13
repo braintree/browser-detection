@@ -1,4 +1,4 @@
-import isEdge = require("../is-edge");
+import isEdge from "../is-edge";
 
 const AGENTS: {
   [key: string]: string;

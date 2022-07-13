@@ -1,7 +1,7 @@
-import hasSoftwareKeyboard = require("../has-software-keyboard");
-import isAndroid = require("../is-android");
-import isChromeOS = require("../is-chrome-os");
-import isIos = require("../is-ios");
+import hasSoftwareKeyboard from "../has-software-keyboard";
+import isAndroid from "../is-android";
+import isChromeOS from "../is-chrome-os";
+import isIos from "../is-ios";
 
 jest.mock("../is-android");
 jest.mock("../is-chrome-os");

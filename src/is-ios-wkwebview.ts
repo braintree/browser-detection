@@ -1,6 +1,6 @@
-import isIosWebview = require("./is-ios-webview");
+import isIosWebview from "./is-ios-webview";
 
-export = function isIosWKWebview(
+export default function isIosWKWebview(
   ua?: string,
   statusBarVisible?: boolean
 ): boolean {

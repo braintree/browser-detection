@@ -1,5 +1,5 @@
-import isIos = require("./is-ios");
-import isIosFirefox = require("./is-ios-firefox");
+import isIos from "./is-ios";
+import isIosFirefox from "./is-ios-firefox";
 
 const webkitRegexp = /webkit/i;
 
@@ -15,7 +15,7 @@ function isFacebook(ua: string): boolean {
   return ua.indexOf("FBAN") > -1;
 }
 
-export = function isIosSafari(ua?: string): boolean {
+export default function isIosSafari(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (

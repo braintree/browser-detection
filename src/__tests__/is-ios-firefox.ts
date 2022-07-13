@@ -1,4 +1,4 @@
-import isIosFirefox = require("../is-ios-firefox");
+import isIosFirefox from "../is-ios-firefox";
 
 const AGENTS: {
   [key: string]: string;

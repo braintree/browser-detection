@@ -1,4 +1,4 @@
-import isIe = require("../is-ie");
+import isIe from "../is-ie";
 
 const AGENTS: {
   [key: string]: string;
