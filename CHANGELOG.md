@@ -1,8 +1,8 @@
 # Browser Detection - Release Notes
 
-# Unreleased
+# 1.13.0 (2022-07-14)
 
-- Update mobile webview definitions to ensure modern webviews are accounted for
+- Update mobile webview definitions to ensure modern webviews are accounted for.
 
 # 1.12.1 (2021-09-28)
 
