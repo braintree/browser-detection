@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-# Unreleased
+# 1.14.0 (2022-07-20)
 
 - Remove window.safari object validation from iOS webview.
 
