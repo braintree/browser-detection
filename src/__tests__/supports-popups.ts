@@ -51,13 +51,6 @@ describe("supportsPopups", () => {
       }
       if (!/webview/i.test(key)) {
         ua = AGENTS[key];
-
-        if (key.includes("Safari")) {
-          window.safari = {
-            pushNotification: {},
-          };
-        }
-
         expect(supportsPopups(ua)).toBe(true);
       }
     }
