@@ -15,6 +15,7 @@ import isIosSafari = require("./is-ios-safari");
 import isIosUIWebview = require("./is-ios-uiwebview");
 import isIosWebview = require("./is-ios-webview");
 import isIosWKWebview = require("./is-ios-wkwebview");
+import isIpadOS = require("./is-ipados");
 import isMobileFirefox = require("./is-mobile-firefox");
 import isOpera = require("./is-opera");
 import isSamsungBrowser = require("./is-samsung");
@@ -41,6 +42,7 @@ export {
   isIosUIWebview,
   isIosWebview,
   isIosWKWebview,
+  isIpadOS,
   isMobileFirefox,
   isOpera,
   isSamsungBrowser,

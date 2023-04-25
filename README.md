@@ -24,6 +24,7 @@ browserDetection.isIosSafari();
 browserDetection.isIosWebview();
 browserDetection.isIosUIWebview();
 browserDetection.isIosWKWebview();
+browserDetection.isIpadOS();
 browserDetection.isMobileFirefox();
 browserDetection.isOpera();
 browserDetection.isSamsungBrowser();
@@ -53,6 +54,7 @@ const isIosSafari = require("browser-detection/is-ios-safari");
 const isIosWebview = require("browser-detection/is-ios-webview");
 const isIosUIWebview = require("browser-detection/is-ios-uiwebview");
 const isIosWKWebview = require("browser-detection/is-ios-wkwebview");
+const isIpadOS = require("browser-detection/is-ipados");
 const isMobileFirefox = require("browser-detection/is-mobile-firefox");
 const isOpera = require("browser-detection/is-opera");
 const isSamsungBrowser = require("browser-detection/is-samsung");
@@ -66,4 +68,16 @@ const supportsPopups = require("browser-detection/supports-popups");
 
 ```sh
 npm test
+```
+### Notes on isIpadOs
+
+isIpadOS is a new option for browser detection, and is also included in isIos. isIos defaults to checking for iPads to maintain consistent behavior with how it acted in the past. If `checkIpadOS` is set to false, then it will only check for older gen iPads and current iOS
+```js
+const browserDetection = require("browser-detection");
+const ua = window.navigator.userAgent;
+// assume ua is from iPadOs 13 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15"
+browserDetection.isIos(ua);
+// will return true
+browserDetection.isIos(ua, false);
+// will return false
 ```
