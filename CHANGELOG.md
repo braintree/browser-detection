@@ -3,6 +3,8 @@
 # Unreleased
 
 - Remove window.safari object validation from iOS webview.
+- Update `is-ios` to account for user agent behavior on newer iPads
+- Add `is-ipados` method
 
 # 1.13.0 (2022-07-14)
 
