@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-# Unreleased
+# 1.15.0 (2023-05-08)
 
 - Remove window.safari object validation from iOS webview.
 - Update `is-ios` to account for user agent behavior on newer iPads
