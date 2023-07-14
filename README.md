@@ -69,9 +69,11 @@ const supportsPopups = require("browser-detection/supports-popups");
 ```sh
 npm test
 ```
+
 ### Notes on isIpadOs
 
 `isIpadOS` is a new option for browser detection, and is also included in isIos. isIos defaults to checking for iPads to maintain consistent behavior with how it acted in the past. If `checkIpadOS` is set to false, then it will only check for older gen iPads and current iOS
+
 ```js
 const browserDetection = require("browser-detection");
 const ua = window.navigator.userAgent;

@@ -1,4 +1,4 @@
-import isIosGoogleSearchApp = require("../is-ios-google-search-app");
+import isIosGoogleSearchApp from "../is-ios-google-search-app";
 
 const AGENTS: {
   [key: string]: string;

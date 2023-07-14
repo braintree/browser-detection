@@ -1,28 +1,28 @@
-import isIosFirefox = require("../is-ios-firefox");
+import isMobileFirefox from "../is-mobile-firefox";
 
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");
 
-describe("isIosFirefox", () => {
+describe("isMobileFirefox", () => {
   it("returns true for iPhone Firefox", () => {
-    expect(isIosFirefox(AGENTS.iPhoneFirefox)).toBe(true);
+    expect(isMobileFirefox(AGENTS.iPhoneFirefox)).toBe(true);
   });
 
   it("returns true for iPad Firefox", () => {
-    expect(isIosFirefox(AGENTS.iPadFirefox)).toBe(true);
+    expect(isMobileFirefox(AGENTS.iPadFirefox)).toBe(true);
   });
 
   it("returns true for iPod Firefox", () => {
-    expect(isIosFirefox(AGENTS.iPodFirefox)).toBe(true);
+    expect(isMobileFirefox(AGENTS.iPodFirefox)).toBe(true);
   });
 
-  it("returns false for Android phone Firefox", () => {
-    expect(isIosFirefox(AGENTS.androidPhoneFirefox)).toBe(false);
+  it("returns true for Android phone Firefox", () => {
+    expect(isMobileFirefox(AGENTS.androidPhoneFirefox)).toBe(true);
   });
 
-  it("returns false for Android tablet Firefox", () => {
-    expect(isIosFirefox(AGENTS.androidTabletFirefox)).toBe(false);
+  it("returns true for Android tablet Firefox", () => {
+    expect(isMobileFirefox(AGENTS.androidTabletFirefox)).toBe(true);
   });
 
   it("returns false for desktop Firefox", () => {
@@ -31,7 +31,7 @@ describe("isIosFirefox", () => {
     Object.keys(AGENTS).forEach((key) => {
       if (!/iphone|ipad|ipod|phone|tablet/i.test(key) && /firefox/i.test(key)) {
         ua = AGENTS[key];
-        expect(isIosFirefox(ua)).toBe(false);
+        expect(isMobileFirefox(ua)).toBe(false);
       }
     });
   });
@@ -45,7 +45,7 @@ describe("isIosFirefox", () => {
         !/firefox/i.test(key)
       ) {
         ua = AGENTS[key];
-        expect(isIosFirefox(ua)).toBe(false);
+        expect(isMobileFirefox(ua)).toBe(false);
       }
     });
   });
