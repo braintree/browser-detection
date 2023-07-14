@@ -1,4 +1,4 @@
-export = function isOpera(ua?: string): boolean {
+function isOpera(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (
@@ -6,4 +6,6 @@ export = function isOpera(ua?: string): boolean {
     ua.indexOf("Opera/") !== -1 ||
     ua.indexOf("OPT/") !== -1
   );
-};
+}
+
+export default isOpera;
