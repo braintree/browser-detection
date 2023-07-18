@@ -2,7 +2,7 @@
 
 # Unreleased
 
-- Add `is-safari` method ([#48](https://github.com/braintree/browser-detection/issues/48))
+- Add `is-safari` method for desktop Safari detection ([#48](https://github.com/braintree/browser-detection/issues/48))
 
 # 1.16.0 (2023-05-08)
 
