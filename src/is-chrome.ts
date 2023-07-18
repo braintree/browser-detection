@@ -4,7 +4,7 @@ import isDuckDuckGo from "./is-duckduckgo";
 import isOpera from "./is-opera";
 import isSilk from "./is-silk";
 
-export default function isChrome(ua?: string): boolean {
+function isChrome(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return (
@@ -16,3 +16,5 @@ export default function isChrome(ua?: string): boolean {
     !isSilk(ua)
   );
 }
+
+export default isChrome;
