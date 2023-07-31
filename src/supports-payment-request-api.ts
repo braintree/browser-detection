@@ -1,4 +1,4 @@
-import isChrome = require("./is-chrome");
+import isChrome from "./is-chrome";
 
 const MINIMUM_SUPPORTED_CHROME_VERSION = 61;
 
@@ -14,7 +14,7 @@ function isSupportedChromeVersion(ua: string): boolean {
   return version >= MINIMUM_SUPPORTED_CHROME_VERSION;
 }
 
-export = function supportsPaymentRequestApi(ua?: string): boolean {
+function supportsPaymentRequestApi(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   if (!window.PaymentRequest) {
@@ -31,4 +31,6 @@ export = function supportsPaymentRequestApi(ua?: string): boolean {
   // Android Chrome as early as Chrome v53, but it was not
   // finalized until v61
   return isSupportedChromeVersion(ua);
-};
+}
+
+export default supportsPaymentRequestApi;

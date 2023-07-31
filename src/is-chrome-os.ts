@@ -1,5 +1,7 @@
-export = function isChromeOS(ua?: string): boolean {
+function isChromeOS(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return /CrOS/i.test(ua);
-};
+}
+
+export default isChromeOS;

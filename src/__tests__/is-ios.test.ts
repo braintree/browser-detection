@@ -1,4 +1,4 @@
-import isIos = require("../is-ios");
+import isIos from "../is-ios";
 
 const AGENTS: {
   [key: string]: string;

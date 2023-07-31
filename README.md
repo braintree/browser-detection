@@ -13,6 +13,7 @@ browserDetection.isChrome();
 browserDetection.isDuckDuckGo();
 browserDetection.isEdge();
 browserDetection.isFirefox();
+browserDetection.isSafari();
 browserDetection.isIe();
 browserDetection.isIe9();
 browserDetection.isIe10();
@@ -43,6 +44,7 @@ const isChrome = require("browser-detection/is-chrome");
 const isDuckDuckGo = require("browser-detection/is-duckduckgo");
 const isEdge = require("browser-detection/is-edge");
 const isFirefox = require("browser-detection/is-firefox");
+const isSafari = require("browser-detection/is-safari");
 const isIe = require("browser-detection/is-ie");
 const isIe9 = require("browser-detection/is-ie9");
 const isIe10 = require("browser-detection/is-ie10");
@@ -69,9 +71,11 @@ const supportsPopups = require("browser-detection/supports-popups");
 ```sh
 npm test
 ```
+
 ### Notes on isIpadOs
 
 `isIpadOS` is a new option for browser detection, and is also included in isIos. isIos defaults to checking for iPads to maintain consistent behavior with how it acted in the past. If `checkIpadOS` is set to false, then it will only check for older gen iPads and current iOS
+
 ```js
 const browserDetection = require("browser-detection");
 const ua = window.navigator.userAgent;
@@ -81,3 +85,7 @@ browserDetection.isIos(ua);
 browserDetection.isIos(ua, false);
 // will return false
 ```
+
+### Notes on Safari
+
+`is-safari` is used for _desktop_ Safari detection, if you are trying to detect an iOS version of Safari, use `is-ios-safari`.

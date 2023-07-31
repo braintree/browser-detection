@@ -1,4 +1,4 @@
-import isIosUIWebview = require("../is-ios-uiwebview");
+import isIosUIWebview from "../is-ios-uiwebview";
 
 const AGENTS: {
   [key: string]: string;

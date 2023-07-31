@@ -1,11 +1,13 @@
-import isIos = require("./is-ios");
+import isIos from "./is-ios";
 
 function isGoogleSearchApp(ua: string): boolean {
   return /\bGSA\b/.test(ua);
 }
 
-export = function isIosGoogleSearchApp(ua?: string): boolean {
+function isIosGoogleSearchApp(ua?: string): boolean {
   ua = ua || window.navigator.userAgent;
 
   return isIos(ua) && isGoogleSearchApp(ua);
-};
+}
+
+export default isIosGoogleSearchApp;

@@ -1,4 +1,4 @@
-import isChromeOS = require("../is-chrome-os");
+import isChromeOS from "../is-chrome-os";
 
 const AGENTS: {
   [key: string]: string;
