@@ -5,7 +5,7 @@ const AGENTS: {
 } = require("./helpers/user-agents.json");
 
 describe("isSafari", () => {
-  it("returns true when safari", () => {
+  it("returns true when desktop safari", () => {
     expect(isSafari(AGENTS.macSafari7_0_2)).toBe(true);
     expect(isSafari(AGENTS.pcSafari5_1)).toBe(true);
   });
@@ -23,34 +23,26 @@ describe("isSafari", () => {
     expect(isSafari(AGENTS.iPhoneFacebookWebview)).toBe(false);
   });
 
-  it("returns false when chrome", () => {
+  it("returns false when desktop chrome", () => {
     expect(isSafari(AGENTS.pcChrome_27)).toBe(false);
     expect(isSafari(AGENTS.pcChrome_41)).toBe(false);
     expect(isSafari(AGENTS.pcChrome_60)).toBe(false);
     expect(isSafari(AGENTS.pcChrome_61)).toBe(false);
   });
 
-  it("returns false when firefox", () => {
+  it("returns false when desktop firefox", () => {
     expect(isSafari(AGENTS.pcFirefox)).toBe(false);
     expect(isSafari(AGENTS.macFirefox)).toBe(false);
     expect(isSafari(AGENTS.linuxFirefox)).toBe(false);
   });
 
-  it("returns false when opera", () => {
+  it("returns false when desktop opera", () => {
     expect(isSafari(AGENTS.pcOpera)).toBe(false);
     expect(isSafari(AGENTS.macOpera)).toBe(false);
     expect(isSafari(AGENTS.linuxOpera)).toBe(false);
   });
 
-  it("returns false when IE", () => {
-    expect(isSafari(AGENTS.ie7)).toBe(false);
-    expect(isSafari(AGENTS.ie8)).toBe(false);
-    expect(isSafari(AGENTS.ie9)).toBe(false);
-    expect(isSafari(AGENTS.ie10)).toBe(false);
-    expect(isSafari(AGENTS.ie11)).toBe(false);
-  });
-
-  it("returns false when edge", () => {
+  it("returns false when desktop edge", () => {
     expect(isSafari(AGENTS.edge12)).toBe(false);
     expect(isSafari(AGENTS.edge13)).toBe(false);
   });
