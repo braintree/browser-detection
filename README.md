@@ -13,6 +13,7 @@ browserDetection.isChrome();
 browserDetection.isDuckDuckGo();
 browserDetection.isEdge();
 browserDetection.isFirefox();
+browserDetection.isSafari();
 browserDetection.isIe();
 browserDetection.isIe9();
 browserDetection.isIe10();
@@ -43,6 +44,7 @@ const isChrome = require("browser-detection/is-chrome");
 const isDuckDuckGo = require("browser-detection/is-duckduckgo");
 const isEdge = require("browser-detection/is-edge");
 const isFirefox = require("browser-detection/is-firefox");
+const isSafari = require("browser-detection/is-safari");
 const isIe = require("browser-detection/is-ie");
 const isIe9 = require("browser-detection/is-ie9");
 const isIe10 = require("browser-detection/is-ie10");
@@ -83,3 +85,7 @@ browserDetection.isIos(ua);
 browserDetection.isIos(ua, false);
 // will return false
 ```
+
+### Notes on Safari
+
+`is-safari` is used for _desktop_ Safari detection, if you are trying to detect an iOS version of Safari, use `is-ios-safari`.

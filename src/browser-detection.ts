@@ -11,6 +11,7 @@ import isFirefox from "./is-firefox";
 import isIos from "./is-ios";
 import isIosFirefox from "./is-ios-firefox";
 import isIosGoogleSearchApp from "./is-ios-google-search-app";
+import isSafari from "./is-safari";
 import isIosSafari from "./is-ios-safari";
 import isIosUIWebview from "./is-ios-uiwebview";
 import isIosWebview from "./is-ios-webview";
@@ -38,6 +39,7 @@ export {
   isIos,
   isIosFirefox,
   isIosGoogleSearchApp,
+  isSafari,
   isIosSafari,
   isIosUIWebview,
   isIosWebview,
