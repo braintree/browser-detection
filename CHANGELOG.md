@@ -1,8 +1,9 @@
 # Browser Detection - Release Notes
 
-# Unreleased
+# 1.17.0
 
 - Add `is-safari` method for desktop Safari detection ([#48](https://github.com/braintree/browser-detection/issues/48))
+- Migrate tests from jest to vitest
 
 # 1.16.0 (2023-05-08)
 
