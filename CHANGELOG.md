@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-# Unreleased
+# 1.17.1
 
 - Migrate back to jest
 - Remove ES6 style imports/exports in `/src` directory
