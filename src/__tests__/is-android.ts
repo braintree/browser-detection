@@ -1,4 +1,4 @@
-import isAndroid from "../is-android";
+import isAndroid = require("../is-android");
 
 const AGENTS: {
   [key: string]: string;

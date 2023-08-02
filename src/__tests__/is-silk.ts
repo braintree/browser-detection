@@ -1,4 +1,4 @@
-import isSilk from "../is-silk";
+import isSilk = require("../is-silk");
 
 const AGENTS: {
   [key: string]: string;

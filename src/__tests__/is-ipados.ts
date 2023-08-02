@@ -1,4 +1,4 @@
-import isIpadOS from "../is-ipados";
+import isIpadOS = require("../is-ipados");
 
 const AGENTS: {
   [key: string]: string;

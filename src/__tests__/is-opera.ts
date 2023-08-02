@@ -1,4 +1,4 @@
-import isOpera from "../is-opera";
+import isOpera = require("../is-opera");
 
 const AGENTS: {
   [key: string]: string;
