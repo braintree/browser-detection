@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs = require("fs");
+import path = require("path");
 
 const browserDetection: {
   [key: string]: (ua: string) => boolean;
@@ -17,9 +17,7 @@ describe("browserDetection", () => {
     expect(jsFiles.length).toBeGreaterThan(0);
 
     jsFiles.forEach((module) => {
-      const found = functions.find(
-        (prop) => module.default.name === browserDetection[prop].name
-      );
+      const found = functions.find((prop) => module === browserDetection[prop]);
 
       if (!found) {
         throw new Error(`${module} was not found on browserDetection`);

@@ -1,5 +1,10 @@
 # Browser Detection - Release Notes
 
+# Unreleased
+
+- Migrate back to jest
+- Remove ES6 style imports/exports in `/src` directory
+
 # 1.17.0
 
 - Add `is-safari` method for desktop Safari detection ([#48](https://github.com/braintree/browser-detection/issues/48))
