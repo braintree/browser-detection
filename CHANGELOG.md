@@ -3,6 +3,7 @@
 # Unreleased
 
 - Remove window.safari object validation from iOS webview.
+- Fix issue of MS Edge browser detection
 
 # 1.13.0 (2022-07-14)
 
