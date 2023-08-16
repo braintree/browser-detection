@@ -28,4 +28,8 @@ describe("isEdge", () => {
   it("returns true when Edge 13", () => {
     expect(isEdge(AGENTS.edge13)).toBe(true);
   });
+
+  it("returns true when Edge 103", () => {
+    expect(isEdge(AGENTS.edge103)).toBe(true);
+  });
 });

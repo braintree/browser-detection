@@ -1,5 +1,8 @@
 # Browser Detection - Release Notes
 
+# Unreleased
+- Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
+
 # 1.17.1
 
 - Migrate back to jest
