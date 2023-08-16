@@ -3,7 +3,7 @@
 # Unreleased
 
 - Remove window.safari object validation from iOS webview.
-- Fix issue of MS Edge browser detection
+- Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc )
 
 # 1.13.0 (2022-07-14)
 
