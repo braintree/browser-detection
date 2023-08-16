@@ -1,9 +1,24 @@
 # Browser Detection - Release Notes
 
 # Unreleased
+- Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
+
+# 1.17.1
+
+- Migrate back to jest
+- Remove ES6 style imports/exports in `/src` directory
+
+# 1.17.0
+
+- Add `is-safari` method for desktop Safari detection ([#48](https://github.com/braintree/browser-detection/issues/48))
+- Migrate tests from jest to vitest
+
+# 1.16.0 (2023-05-08)
 
 - Remove window.safari object validation from iOS webview.
-- Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc )
+- Update `is-ios` to account for user agent behavior on newer iPads
+- Add `is-ipados` method
+- Typoed version number so we are skipping all the way to 1.16.0
 
 # 1.13.0 (2022-07-14)
 

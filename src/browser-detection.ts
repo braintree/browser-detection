@@ -8,6 +8,7 @@ import isIe10 = require("./is-ie10");
 import isIe11 = require("./is-ie11");
 import isEdge = require("./is-edge");
 import isFirefox = require("./is-firefox");
+import isSafari = require("./is-safari");
 import isIos = require("./is-ios");
 import isIosFirefox = require("./is-ios-firefox");
 import isIosGoogleSearchApp = require("./is-ios-google-search-app");
@@ -15,6 +16,7 @@ import isIosSafari = require("./is-ios-safari");
 import isIosUIWebview = require("./is-ios-uiwebview");
 import isIosWebview = require("./is-ios-webview");
 import isIosWKWebview = require("./is-ios-wkwebview");
+import isIpadOS = require("./is-ipados");
 import isMobileFirefox = require("./is-mobile-firefox");
 import isOpera = require("./is-opera");
 import isSamsungBrowser = require("./is-samsung");
@@ -37,10 +39,12 @@ export {
   isIos,
   isIosFirefox,
   isIosGoogleSearchApp,
+  isSafari,
   isIosSafari,
   isIosUIWebview,
   isIosWebview,
   isIosWKWebview,
+  isIpadOS,
   isMobileFirefox,
   isOpera,
   isSamsungBrowser,
