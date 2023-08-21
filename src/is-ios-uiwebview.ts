@@ -2,7 +2,7 @@ import isIosWebview = require("./is-ios-webview");
 
 export = function isIosUIWebview(
   ua?: string,
-  statusBarVisible?: boolean
+  statusBarVisible?: boolean,
 ): boolean {
   statusBarVisible =
     typeof statusBarVisible !== "undefined"

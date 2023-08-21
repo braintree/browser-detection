@@ -7,7 +7,7 @@ const AGENTS: {
 describe("isIosGoogleSearchApp", () => {
   it("returns true for iphone GoogleSearchApp", () => {
     expect(isIosGoogleSearchApp(AGENTS.iPhoneGoogleSearchAppWebview)).toBe(
-      true
+      true,
     );
   });
 

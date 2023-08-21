@@ -10,7 +10,7 @@ describe("isIosUIWebview", () => {
     expect(isIosUIWebview(AGENTS.iPodWebview, false)).toBe(true);
     expect(isIosUIWebview(AGENTS.iPhoneWebview, false)).toBe(true);
     expect(isIosUIWebview(AGENTS.iPhoneGoogleSearchAppWebview, false)).toBe(
-      true
+      true,
     );
   });
 
@@ -19,7 +19,7 @@ describe("isIosUIWebview", () => {
     expect(isIosUIWebview(AGENTS.iPodWebview, true)).toBe(false);
     expect(isIosUIWebview(AGENTS.iPhoneWebview, true)).toBe(false);
     expect(isIosUIWebview(AGENTS.iPhoneGoogleSearchAppWebview, true)).toBe(
-      false
+      false,
     );
   });
 });

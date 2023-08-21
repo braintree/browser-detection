@@ -1,6 +1,7 @@
 # Browser Detection - Release Notes
 
 # 1.17.2
+
 - Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
 
 # 1.17.1
