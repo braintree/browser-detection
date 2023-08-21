@@ -1,5 +1,11 @@
 # Browser Detection - Release Notes
 
+# UNRELEASED
+
+- Dependency Updates:
+  - Update prettier to v3
+  - Update eslint-plugin-prettier to v5
+
 # 1.17.2
 
 - Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
