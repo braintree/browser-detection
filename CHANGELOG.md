@@ -3,8 +3,10 @@
 # UNRELEASED
 
 - Dependency Updates:
-  - Update prettier to v3
-  - Update eslint-plugin-prettier to v5
+  - Prettier to v3
+  - eslint-plugin-prettier to v5
+  - @types/node to v20
+  - Typescript to v5
 
 # 1.17.2
 
