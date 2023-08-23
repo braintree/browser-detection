@@ -7,6 +7,7 @@
   - eslint-plugin-prettier to v5
   - @types/node to v20
   - Typescript to v5
+  - Node to v18
 
 # 1.17.2
 
