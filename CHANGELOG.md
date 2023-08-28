@@ -1,6 +1,17 @@
 # Browser Detection - Release Notes
 
+# UNRELEASED
+
+- Dependency Updates:
+  - Node to v18
+- DevDependency Updates:
+  - Prettier to v3
+  - eslint-plugin-prettier to v5
+  - @types/node to v20
+  - Typescript to v5
+
 # 1.17.2
+
 - Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
 
 # 1.17.1

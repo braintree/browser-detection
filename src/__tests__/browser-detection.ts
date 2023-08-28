@@ -10,7 +10,7 @@ describe("browserDetection", () => {
     const functions = Object.keys(browserDetection);
     const files = fs.readdirSync("./");
     const jsFileNames = files.filter(
-      (file) => path.extname(file) === ".js" && file !== "browser-detection.js"
+      (file) => path.extname(file) === ".js" && file !== "browser-detection.js",
     );
     const jsFiles = jsFileNames.map((file) => require(`../../${file}`));
 
