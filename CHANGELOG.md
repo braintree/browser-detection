@@ -2,6 +2,10 @@
 
 # UNRELEASED
 
+- Convert tests from Jest to Vitest
+- Update node to v18
+- Support ES6 imports/exports
+- Changed entry point to `index.js`
 - Dependency Updates:
   - Node to v18
 - DevDependency Updates:
