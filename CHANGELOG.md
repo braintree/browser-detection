@@ -1,6 +1,17 @@
 # Browser Detection - Release Notes
 
+# Unreleased
+
+- Convert tests from Jest to Vitest
+- Update node to v18
+- Support ES6 imports/exports
+- Changed entry point to `index.js`
+- Dev Dependency Updates:
+  - TypeScript to next major version (5)
+  - Other minor dependency updates
+
 # 1.17.2
+
 - Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
 
 # 1.17.1
