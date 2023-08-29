@@ -1,14 +1,18 @@
 # Browser Detection - Release Notes
 
-# Unreleased
+# UNRELEASED
 
 - Convert tests from Jest to Vitest
 - Update node to v18
 - Support ES6 imports/exports
 - Changed entry point to `index.js`
-- Dev Dependency Updates:
-  - TypeScript to next major version (5)
-  - Other minor dependency updates
+- Dependency Updates:
+  - Node to v18
+- DevDependency Updates:
+  - Prettier to v3
+  - eslint-plugin-prettier to v5
+  - @types/node to v20
+  - Typescript to v5
 
 # 1.17.2
 
