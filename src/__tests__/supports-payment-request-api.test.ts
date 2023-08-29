@@ -1,4 +1,4 @@
-import supportsPaymentRequestApi = require("../supports-payment-request-api");
+import { supportsPaymentRequestApi } from "../";
 
 const AGENTS: {
   [key: string]: string;

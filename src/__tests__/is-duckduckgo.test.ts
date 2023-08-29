@@ -1,4 +1,4 @@
-import isDuckDuckGo = require("../is-duckduckgo");
+import { isDuckDuckGo } from "../";
 
 const AGENTS: {
   [key: string]: string;

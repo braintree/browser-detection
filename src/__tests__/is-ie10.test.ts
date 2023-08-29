@@ -1,19 +1,19 @@
-import isIe10 = require("../is-ie10");
+import { isIE10 } from "../";
 
 const AGENTS: {
   [key: string]: string;
 } = require("./helpers/user-agents.json");
 
-describe("isIe10", () => {
+describe("isIE10", () => {
   it("false when chrome", () => {
-    expect(isIe10(AGENTS.pcChrome_41)).toBe(false);
+    expect(isIE10(AGENTS.pcChrome_41)).toBe(false);
   });
 
   it("true when IE10", () => {
-    expect(isIe10(AGENTS.ie10)).toBe(true);
+    expect(isIE10(AGENTS.ie10)).toBe(true);
   });
 
   it("false when IE9", () => {
-    expect(isIe10(AGENTS.ie9)).toBe(false);
+    expect(isIE10(AGENTS.ie9)).toBe(false);
   });
 });

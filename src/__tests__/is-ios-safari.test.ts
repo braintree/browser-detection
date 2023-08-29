@@ -1,4 +1,4 @@
-import isIosSafari = require("../is-ios-safari");
+import { isIosSafari } from "../";
 
 const AGENTS: {
   [key: string]: string;

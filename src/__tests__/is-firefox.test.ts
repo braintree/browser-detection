@@ -1,4 +1,4 @@
-import isFirefox = require("../is-firefox");
+import { isFirefox } from "../";
 
 const AGENTS: {
   [key: string]: string;
