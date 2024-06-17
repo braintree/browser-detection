@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+# UNRELEASED
+
+- Updates braces to 3.0.3
+
 # 2.0.0
 
 - BREAKING CHANGES:
