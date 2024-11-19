@@ -1,11 +1,17 @@
 # Browser Detection - Release Notes
 
-# 2.0.1
+## UNRELEASED
+
+- Update (sub-)dependencies
+  - `cross-spawn` to 7.0.6
+  - `micromatch` to 4.0.8
+
+## 2.0.1
 
 - Updates braces to 3.0.3
 - Updates ws to 8.17.1
 
-# 2.0.0
+## 2.0.0
 
 - BREAKING CHANGES:
   - Update Node to v18
@@ -15,36 +21,36 @@
   - @types/node to v20
   - Typescript to v5
 
-# 1.17.2
+## 1.17.2
 
 - Fix edge detection by also checking for "Edg/" in userAgent (authored by @petercmuc)
 
-# 1.17.1
+## 1.17.1
 
 - Migrate back to jest
 - Remove ES6 style imports/exports in `/src` directory
 
-# 1.17.0
+## 1.17.0
 
 - Add `is-safari` method for desktop Safari detection ([#48](https://github.com/braintree/browser-detection/issues/48))
 - Migrate tests from jest to vitest
 
-# 1.16.0 (2023-05-08)
+## 1.16.0 (2023-05-08)
 
 - Remove window.safari object validation from iOS webview.
 - Update `is-ios` to account for user agent behavior on newer iPads
 - Add `is-ipados` method
 - Typoed version number so we are skipping all the way to 1.16.0
 
-# 1.13.0 (2022-07-14)
+## 1.13.0 (2022-07-14)
 
 - Update mobile webview definitions to ensure modern webviews are accounted for.
 
-# 1.12.1 (2021-09-28)
+## 1.12.1 (2021-09-28)
 
 - Correct `is-ios-safari` to return `false` for the Facebook browser
 
-# 1.12.0 (2021-06-08)
+## 1.12.0 (2021-06-08)
 
 - Add `is-duckduckgo` method
 - Add `is-ios-google-search-app` method
@@ -53,19 +59,19 @@
 - Fix issue where `is-chrome` would incorrectly report `true` for DuckDuckGo and Silk browsers
 - Fix issue where `supports-popups` would incorrectly report `false` for DuckDuckGo
 
-# 1.11.1 (2021-04-07)
+## 1.11.1 (2021-04-07)
 
 - Fix issue where `is-ios-safari` was returning `true` for iOS Firefox browsers
 
-# 1.11.0 (2020-10-27)
+## 1.11.0 (2020-10-27)
 
 - Add `has-software-keyboard` method
 
-# 1.10.1 (2020-10-19)
+## 1.10.1 (2020-10-19)
 
 - Fix issue where typescript declarations did not get published
 
-# 1.10.0 (2020-07-10)
+## 1.10.0 (2020-07-10)
 
 - Add typescript types
 
