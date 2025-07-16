@@ -3,7 +3,7 @@
 ## 2.1.0
 
 - Add browser ‘incognito’ tab detection
-  - add `detectincognitojs` Dependency v1.6.0
+  - add `detectincognitojs` dependency 1.6.0
 
 ## 2.0.2
 
