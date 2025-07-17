@@ -9,6 +9,7 @@ import isIe11 = require("./is-ie11");
 import isEdge = require("./is-edge");
 import isFirefox = require("./is-firefox");
 import isSafari = require("./is-safari");
+import isIncognito = require("./is-incognito");
 import isIos = require("./is-ios");
 import isIosFirefox = require("./is-ios-firefox");
 import isIosGoogleSearchApp = require("./is-ios-google-search-app");
@@ -36,6 +37,7 @@ export {
   isIe11,
   isEdge,
   isFirefox,
+  isIncognito,
   isIos,
   isIosFirefox,
   isIosGoogleSearchApp,
