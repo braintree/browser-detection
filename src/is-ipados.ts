@@ -4,5 +4,5 @@ export = function isIpadOS(ua?: string, document?: object): boolean {
 
   // "ontouchend" is used to determine if a browser is on an iPad, otherwise
   // user-agents for iPadOS behave/identify as a desktop browser
-  return /Mac|iPad/i.test(ua) && "ontouchend" in document;
+  return /Mac|iPad/i.test(ua) && document.hasOwnProperty("ontouchend");
 };

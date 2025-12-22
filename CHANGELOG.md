@@ -1,5 +1,19 @@
 # Browser Detection - Release Notes
 
+## UNRELEASED
+
+- Update dependencies
+  - @types/jest to 30.0.0
+  - @types/node to 25.0.3
+  - eslint to 8.57.1
+  - eslint-plugin-prettier to 5.5.4
+  - jest to 30.2.0
+  - jest-environment-jsdom to 30.2.0
+  - prettier to 3.7.4
+  - ts-jest to 29.4.6
+  - typescript to 5.9.3
+- Update Node to v24
+
 ## 2.1.0
 
 - Add browser ‘incognito’ tab detection
