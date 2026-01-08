@@ -1,5 +1,13 @@
 # Browser Detection - Release Notes
 
+## UNRELEASED
+
+- Added Windows playwright tests that can run against Browserstack
+  - add `@playwright/test` dependency 1.57.0
+  - add `browserify-derequire` dependency 1.1.1
+  - add `browserstack-local` dependency 1.5.8
+  - add `dotenv` dependency 16.4.7
+
 ## 2.1.0
 
 - Add browser ‘incognito’ tab detection

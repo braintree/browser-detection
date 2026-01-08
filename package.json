@@ -9,9 +9,13 @@
     "*.js"
   ],
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.5.2",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "browserify-derequire": "^1.1.1",
+    "browserstack-local": "^1.5.8",
+    "dotenv": "^16.4.7",
     "eslint": "^8.47.0",
     "eslint-config-braintree": "^6.0.0-typescript-prep-rc.2",
     "eslint-plugin-prettier": "^5.0.0",
@@ -22,6 +26,7 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
+    "clean:playwright": "find ./ -type f \\( -name \"local.log\" \\) -delete && find ./ -depth \\( -name \"log\" -or -name \"playwright-report\" -or -name \"test-results\" \\) -type d -exec rm -rf \"{}\" \\;",
     "prepublishOnly": "npm run build",
     "prebuild": "prettier --write .",
     "build": "tsc --declaration",
@@ -29,6 +34,12 @@
     "posttest": "npm run lint",
     "pretest": "npm run build",
     "test": "jest",
+    "start": "npx http-server . -p 8080",
+    "pretest:playwright": "npx browserify dist/browser-detection.js -o dist/browser-detection.bundle.js --standalone browserDetection",
+    "test:playwright": "npx playwright test --config=src/__tests__/playwright/windows/playwright.browserstack.windows.ts",
+    "posttest:playwright": "npm run clean:playwright",
+    "test:playwright:local": "npm run pretest:playwright && npx playwright test --config=src/__tests__/playwright/windows/playwright.local.ts",
+    "test:playwright:local:headed": "npm run pretest:playwright && npx playwright test --config=src/__tests__/playwright/windows/playwright.local.ts --headed",
     "version": "./version"
   },
   "repository": {
@@ -43,6 +54,9 @@
   },
   "homepage": "https://github.com/braintree/browser-detection#readme",
   "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/__tests__/playwright/*"
+    ],
     "testEnvironment": "jsdom",
     "preset": "ts-jest",
     "restoreMocks": true,
