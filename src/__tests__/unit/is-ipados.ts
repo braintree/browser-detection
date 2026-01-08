@@ -1,8 +1,8 @@
-import isIpadOS = require("../is-ipados");
+import isIpadOS = require("../../is-ipados");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 const DOCUMENT_OBJECT = {
   ontouchend: null,

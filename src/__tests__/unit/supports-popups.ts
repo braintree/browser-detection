@@ -1,8 +1,8 @@
-import supportsPopups = require("../supports-popups");
+import supportsPopups = require("../../supports-popups");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 type WindowSafari = {
   // Disabling rule here because we don't really care is on the safari object beyond 'pushNotifications'.

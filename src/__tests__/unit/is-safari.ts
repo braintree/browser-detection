@@ -1,8 +1,8 @@
-import isSafari = require("../is-safari");
+import isSafari = require("../../is-safari");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isSafari", () => {
   it("returns true when desktop safari", () => {

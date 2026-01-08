@@ -1,8 +1,8 @@
-import isIosFirefox = require("../is-ios-firefox");
+import isIosFirefox = require("../../is-ios-firefox");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isIosFirefox", () => {
   it("returns true for iPhone Firefox", () => {

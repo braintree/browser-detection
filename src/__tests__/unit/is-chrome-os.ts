@@ -1,8 +1,8 @@
-import isChromeOS = require("../is-chrome-os");
+import isChromeOS = require("../../is-chrome-os");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isChromeOS", () => {
   it("returns true for ChromeOS Chrome", () => {

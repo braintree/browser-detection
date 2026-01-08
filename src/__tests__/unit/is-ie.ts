@@ -1,8 +1,8 @@
-import isIe = require("../is-ie");
+import isIe = require("../../is-ie");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isIe", () => {
   it("returns false when chrome", () => {

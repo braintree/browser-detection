@@ -1,8 +1,8 @@
-import isSamsungBrowser = require("../is-samsung");
+import isSamsungBrowser = require("../../is-samsung");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isSamsungBrowser", () => {
   it("returns true for Samsung browser", () => {

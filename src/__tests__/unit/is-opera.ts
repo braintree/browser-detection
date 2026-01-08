@@ -1,8 +1,8 @@
-import isOpera = require("../is-opera");
+import isOpera = require("../../is-opera");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isOpera", () => {
   it("returns true for android Opera", () => {

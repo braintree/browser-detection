@@ -1,8 +1,8 @@
-import isChrome = require("../is-chrome");
+import isChrome = require("../../is-chrome");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isChrome", () => {
   it("false when IE9", () => {

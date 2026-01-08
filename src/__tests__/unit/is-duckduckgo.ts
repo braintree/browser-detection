@@ -1,8 +1,8 @@
-import isDuckDuckGo = require("../is-duckduckgo");
+import isDuckDuckGo = require("../../is-duckduckgo");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isDuckDuckGo", () => {
   it("returns true for android DuckDuckGo", () => {

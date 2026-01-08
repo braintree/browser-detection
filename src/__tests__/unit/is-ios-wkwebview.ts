@@ -1,8 +1,8 @@
-import isIosWKWebview = require("../is-ios-wkwebview");
+import isIosWKWebview = require("../../is-ios-wkwebview");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isIosWKWebview", () => {
   let key, ua;

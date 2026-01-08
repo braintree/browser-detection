@@ -1,8 +1,8 @@
-import isIosUIWebview = require("../is-ios-uiwebview");
+import isIosUIWebview = require("../../is-ios-uiwebview");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isIosUIWebview", () => {
   it("returns true for iOS webviews when statusbar.visible is false", () => {

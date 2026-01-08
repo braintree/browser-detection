@@ -1,8 +1,8 @@
-import isEdge = require("../is-edge");
+import isEdge = require("../../is-edge");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isEdge", () => {
   it("returns false when chrome", () => {

@@ -1,8 +1,8 @@
-import isIosGoogleSearchApp = require("../is-ios-google-search-app");
+import isIosGoogleSearchApp = require("../../is-ios-google-search-app");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isIosGoogleSearchApp", () => {
   it("returns true for iphone GoogleSearchApp", () => {

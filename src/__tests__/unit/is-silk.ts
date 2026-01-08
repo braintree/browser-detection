@@ -1,8 +1,8 @@
-import isSilk = require("../is-silk");
+import isSilk = require("../../is-silk");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 describe("isSilk", () => {
   it("returns true for android Silk", () => {

@@ -1,8 +1,8 @@
-import isIos = require("../is-ios");
+import isIos = require("../../is-ios");
 
 const AGENTS: {
   [key: string]: string;
-} = require("./helpers/user-agents.json");
+} = require("../helpers/user-agents.json");
 
 const DOCUMENT_OBJECT = {
   ontouchend: null,

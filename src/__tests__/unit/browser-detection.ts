@@ -3,7 +3,7 @@ import path = require("path");
 
 const browserDetection: {
   [key: string]: (ua: string) => boolean;
-} = require("../../dist/browser-detection");
+} = require("../../../dist/browser-detection");
 
 describe("browserDetection", () => {
   it("includes a prop for each js file in the root directory", () => {
@@ -12,7 +12,7 @@ describe("browserDetection", () => {
     const jsFileNames = files.filter(
       (file) => path.extname(file) === ".js" && file !== "browser-detection.js",
     );
-    const jsFiles = jsFileNames.map((file) => require(`../../${file}`));
+    const jsFiles = jsFileNames.map((file) => require(`../../../${file}`));
 
     expect(jsFiles.length).toBeGreaterThan(0);
 
