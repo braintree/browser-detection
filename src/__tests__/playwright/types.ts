@@ -7,6 +7,6 @@ export interface webCapability {
 
 export interface mobileCapability {
   deviceName: string;
-  platformName: string;
-  platformVersion: string;
+  browserName: string;
+  osVersion: string;
 }
