@@ -1,11 +1,10 @@
 /* eslint-disable no-console */
-import { FullConfig } from "@playwright/test";
 import {
   bsLocal,
   BS_LOCAL_ARGS,
   LOCAL_IDENTIFIER,
   validateBrowserStackEnv,
-} from "./browserstack-constants.ts";
+} from "./browserstack-constants";
 
 // Helper to sleep for a given number of milliseconds
 const sleep = (ms: number) =>
@@ -13,8 +12,7 @@ const sleep = (ms: number) =>
     setTimeout(resolve, ms);
   });
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-async function globalSetup(_config: FullConfig) {
+async function globalSetup() {
   validateBrowserStackEnv();
 
   console.log("Starting BrowserStack Local tunnel...");

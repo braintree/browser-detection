@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { bsLocal } from "./browserstack-constants.ts";
+import { bsLocal } from "./browserstack-constants";
 
 async function globalTeardown() {
   if (bsLocal && bsLocal.isRunning()) {

@@ -1,11 +1,11 @@
 import { defineConfig } from "@playwright/test";
-import { type webCapability } from "../types.ts";
-import baseConfig from "../playwright.browserstack.config.ts";
+import { type webCapability } from "../types";
+import baseConfig from "../playwright.browserstack.config";
 import CAPABILITIES from "../../helpers/capabilities.json";
 import {
   commonCaps,
   getBrowserStackEndpoint,
-} from "../scripts/browserstack-constants.ts";
+} from "../scripts/browserstack-constants";
 
 const capabilities: Record<string, string>[] = [];
 

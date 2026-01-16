@@ -7,6 +7,6 @@
     "target": "es5",
     "lib": ["es2015", "dom"]
   },
-  "include": ["./src/**/*", "src/__tests__/playwright/playwright.browserstack.config.ts"],
+  "include": ["./src/**/*"],
   "exclude": ["**/__tests__/*"]
 }

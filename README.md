@@ -88,7 +88,7 @@ browserDetection.isIos(ua, false);
 
 ### Unit Tests
 
-Run the Jest-based unit tests:
+Run the unit tests:
 
 ```sh
 npm test
