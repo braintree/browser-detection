@@ -1,2 +1,11 @@
 node_modules
 dist
+.env
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+local.log
