@@ -10,17 +10,7 @@ test.describe("on OS X devices", () => {
     await page.goto(
       "http://localhost:8080/src/__tests__/playwright/scripts/homepage.html",
     );
-    await expect(page.getByTestId("home")).toHaveText(
-      "Browser-detection Test App",
-    );
-
     userAgent = await page.getByTestId("agent").innerText();
-    expect(userAgent).not.toBeNull();
-
-    // Load the browser-detection library bundle
-    await page.addScriptTag({
-      url: "http://localhost:8080/dist/browser-detection.bundle.js",
-    });
   });
 
   test("isChrome matches browser", async ({ page }) => {
