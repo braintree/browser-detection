@@ -55,8 +55,15 @@
   "ios": [
     {
       "deviceName": "iPhone SE 2020",
-      "browserName": "chrome",
+      "browserName": "safari",
       "osVersion": "16.4"
+    }
+  ],
+  "ipad": [
+    {
+      "deviceName": "iPad 9th",
+      "browserName": "safari",
+      "osVersion": "12.0"
     }
   ]
 }

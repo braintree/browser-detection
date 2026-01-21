@@ -2,8 +2,11 @@
 
 ## UNRELEASED
 
-- Added OS X playwright tests that can run against Browserstack
-- Added Windows playwright tests that can run against Browserstack
+- Added Playwright tests that can run against Browserstack
+  - iOS (iPhone and iPad)
+  - OS X
+  - Windows
+- New dependencies
   - add `@playwright/test` dependency 1.57.0
   - add `browserify-derequire` dependency 1.1.1
   - add `browserstack-local` dependency 1.5.8
