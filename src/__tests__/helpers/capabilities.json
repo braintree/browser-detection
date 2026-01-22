@@ -61,9 +61,14 @@
   ],
   "ipad": [
     {
-      "deviceName": "iPad 9th",
+      "deviceName": "iPad 8th",
       "browserName": "safari",
-      "osVersion": "12.0"
+      "osVersion": "16.5"
+    },
+    {
+      "deviceName": "iPad Pro 13 2024",
+      "browserName": "safari",
+      "osVersion": "17.0"
     }
   ]
 }

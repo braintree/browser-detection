@@ -40,6 +40,7 @@
     "playwright": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts",
     "playwright:local": "npm run preplaywright && npx playwright test --config=src/__tests__/playwright/playwright.local.ts && npm run postplaywright",
     "playwright:local:headed": "npm run preplaywright && npx playwright test --config=src/__tests__/playwright/playwright.local.ts --headed && npm run postplaywright",
+    "playwright:ipad": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=ipad && npm run postplaywright",
     "playwright:ios": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=ios && npm run postplaywright",
     "playwright:osx": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=osx && npm run postplaywright",
     "playwright:windows": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=windows && npm run postplaywright",
