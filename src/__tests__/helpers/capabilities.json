@@ -25,6 +25,24 @@
       "osVersion": "Tahoe",
       "browserName": "chrome",
       "browserVersion": "latest"
+    },
+    {
+      "os": "OS X",
+      "osVersion": "Tahoe",
+      "browserName": "playwright-webkit",
+      "browserVersion": "latest"
+    },
+    {
+      "os": "OS X",
+      "osVersion": "Tahoe",
+      "browserName": "Edge",
+      "browserVersion": "latest"
+    },
+    {
+      "os": "OS X",
+      "osVersion": "Tahoe",
+      "browserName": "playwright-firefox",
+      "browserVersion": "latest"
     }
   ],
   "android": [
