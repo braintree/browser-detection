@@ -24,6 +24,22 @@ export default defineConfig({
         ...devices["Desktop Safari"],
       },
     },
+    {
+      name: "ios",
+      use: {
+        ...devices["iPhone SE (3rd gen)"],
+      },
+      testMatch: "__tests__/ios.spec.ts",
+    },
+    {
+      name: "ipad",
+      use: {
+        ...devices["iPad (gen 11)"],
+        userAgent:
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7 AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15",
+      },
+      testMatch: "__tests__/ipad.spec.ts",
+    },
   ],
   testMatch: "__tests__/osx.spec.ts",
   timeout: 120000,

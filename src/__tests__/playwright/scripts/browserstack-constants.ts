@@ -58,6 +58,8 @@ export const commonCaps = {
   "browserstack.local": "true",
   "browserstack.localIdentifier": LOCAL_IDENTIFIER,
   "browserstack.networkLogs": "true",
+  "browserstack.playwrightLogs": "true",
+  "browserstack.idleTimeout": "300",
   "client.playwrightVersion": "1.57.0",
   build: `Browser Detection Integration Tests #${BUILD_NUMBER}`,
 } as Record<string, string>;

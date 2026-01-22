@@ -6,7 +6,7 @@ import {
   commonCaps,
   getBrowserStackEndpoint,
 } from "./scripts/browserstack-constants";
-import { webCapability } from "./types";
+import { mobileCapability, webCapability } from "./types";
 
 // Load .env from project root
 dotenv.config({ path: path.resolve(__dirname, ".env") });
@@ -16,7 +16,6 @@ const createWebProjects = (platform: "windows" | "osx") => {
   return platformCapabilities.map((cap) => {
     const capabilities: Record<string, string> = {
       ...commonCaps,
-      project: `${platform}`,
       browser: cap.browserName,
       browser_Version: cap.browserVersion,
       os: cap.os,
@@ -24,7 +23,7 @@ const createWebProjects = (platform: "windows" | "osx") => {
     };
 
     return {
-      name: `${cap.os}`,
+      name: `${platform}`,
       workers: platform === "osx" ? 4 : 3,
       testMatch: `**/${platform}.spec.ts`,
       use: {
@@ -39,15 +38,49 @@ const createWebProjects = (platform: "windows" | "osx") => {
   });
 };
 
+const createMobileProjects = (platform: "android" | "ios" | "ipad") => {
+  const platformCapabilities = CAPABILITIES[platform] as mobileCapability[];
+  return platformCapabilities.map((cap) => {
+    const capabilities: Record<string, string> = {
+      ...commonCaps,
+      browser_version: "latest",
+      browser: cap.browserName,
+      os: platform,
+      real_mobile: "true",
+      device: cap.deviceName,
+      os_version: cap.osVersion,
+    };
+
+    return {
+      name: `${platform}`,
+      fullyParallel: false,
+      testMatch: `**/${platform}.spec.ts`,
+      use: {
+        baseUrl: "http://localhost:8080",
+        connectOptions: {
+          wsEndpoint: getBrowserStackEndpoint(capabilities),
+        },
+        // BrowserStack iOS doesn't support ignoreHTTPSErrors
+        ignoreHTTPSErrors: platform === "android" ? true : false,
+      },
+    };
+  });
+};
+
 export default defineConfig({
   globalSetup: require.resolve("./scripts/playwright.browserstack.setup.ts"),
   globalTeardown: require.resolve(
     "./scripts/playwright.browserstack.teardown.ts",
   ),
 
-  projects: [...createWebProjects("windows"), ...createWebProjects("osx")],
-  timeout: 120000,
-  retries: 1,
+  projects: [
+    ...createWebProjects("windows"),
+    ...createWebProjects("osx"),
+    ...createMobileProjects("ios"),
+    ...createMobileProjects("ipad"),
+  ],
+  timeout: 60000,
+  retries: 0,
   webServer: {
     reuseExistingServer: true,
     command: "npm run start",
@@ -57,11 +90,12 @@ export default defineConfig({
   },
   use: {
     ignoreHTTPSErrors: true,
-    actionTimeout: 30000,
-    navigationTimeout: 30000,
-    trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
 
   reporter: [["list"], ["html", { outputFolder: "playwright-report" }]],
+
+  expect: {
+    timeout: 10000,
+  },
 });
