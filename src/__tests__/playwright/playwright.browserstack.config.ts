@@ -1,15 +1,10 @@
 import { defineConfig } from "@playwright/test";
-import * as path from "path";
-import * as dotenv from "dotenv";
 import CAPABILITIES from "../helpers/capabilities.json";
 import {
   commonCaps,
   getBrowserStackEndpoint,
 } from "./scripts/browserstack-constants";
 import { mobileCapability, webCapability } from "./types";
-
-// Load .env from project root
-dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 const createWebProjects = (platform: "windows" | "osx") => {
   const platformCapabilities = CAPABILITIES[platform] as webCapability[];

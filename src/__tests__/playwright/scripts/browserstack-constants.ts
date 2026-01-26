@@ -2,7 +2,11 @@ import * as path from "path";
 import * as dotenv from "dotenv";
 
 // Load .env from project root
-dotenv.config({ path: path.resolve(__dirname, "../../../../.env") });
+dotenv.config({
+  path: path.resolve(__dirname, "../../../../.env"),
+  // dotenv 17 adds a lot of noise
+  quiet: true,
+});
 
 // Use environment variable for consistent LOCAL_IDENTIFIER across all processes
 // Set this once before running tests (in package.json script or CI)
