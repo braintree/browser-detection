@@ -38,7 +38,10 @@ const createWebProjects = (platform: "windows" | "osx") => {
   });
 };
 
-const createMobileProjects = (platform: "android" | "ios" | "ipad") => {
+// note that browserstack does not seem to support this format of playwright config for android
+// mostly connectOptions.wsEndpoint to generate the capabilities
+// android configurations are in the /android/ directory
+const createMobileAppleProjects = (platform: "ios" | "ipad") => {
   const platformCapabilities = CAPABILITIES[platform] as mobileCapability[];
   return platformCapabilities.map((cap) => {
     const capabilities: Record<string, string> = {
@@ -61,7 +64,7 @@ const createMobileProjects = (platform: "android" | "ios" | "ipad") => {
           wsEndpoint: getBrowserStackEndpoint(capabilities),
         },
         // BrowserStack iOS doesn't support ignoreHTTPSErrors
-        ignoreHTTPSErrors: platform === "android" ? true : false,
+        ignoreHTTPSErrors: false,
       },
     };
   });
@@ -76,8 +79,8 @@ export default defineConfig({
   projects: [
     ...createWebProjects("windows"),
     ...createWebProjects("osx"),
-    ...createMobileProjects("ios"),
-    ...createMobileProjects("ipad"),
+    ...createMobileAppleProjects("ios"),
+    ...createMobileAppleProjects("ipad"),
   ],
   timeout: 60000,
   retries: 0,

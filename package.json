@@ -15,6 +15,7 @@
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "browserify-derequire": "^1.1.1",
     "browserstack-local": "^1.5.8",
+    "browserstack-node-sdk": "^1.49.3",
     "dotenv": "^16.4.7",
     "eslint": "^8.47.0",
     "eslint-config-braintree": "^6.0.0-typescript-prep-rc.2",
@@ -26,7 +27,7 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "clean:playwright": "find ./ -type f \\( -name \"local.log\" \\) -delete && find ./ -depth \\( -name \"log\" -or -name \"playwright-report\" -or -name \"test-results\" \\) -type d -exec rm -rf \"{}\" \\;",
+    "clean:playwright": "find ./ -type f \\( -name \"local.log\" -or -name \"browserstack.err\" \\) -delete && find ./ -depth \\( -name \"log\" -or -name \"playwright-report\" -or -name \"test-results\" \\) -type d -exec rm -rf \"{}\" \\;",
     "prepublishOnly": "npm run build",
     "prebuild": "prettier --write .",
     "build": "tsc --declaration",
@@ -37,9 +38,10 @@
     "start": "npx http-server . -p 8080",
     "preplaywright": "npm run build && rm dist/browser-detection.bundle.js && npx browserify dist/browser-detection.js -o dist/browser-detection.bundle.js --standalone browserDetection",
     "postplaywright": "npm run clean:playwright",
-    "playwright": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts",
+    "playwright": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts && npm run playwright:android",
     "playwright:local": "npm run preplaywright && npx playwright test --config=src/__tests__/playwright/playwright.local.ts && npm run postplaywright",
     "playwright:local:headed": "npm run preplaywright && npx playwright test --config=src/__tests__/playwright/playwright.local.ts --headed && npm run postplaywright",
+    "playwright:android": "npm run preplaywright && cd src/__tests__/playwright/__tests__/android && browserstack-node-sdk playwright test --config=./playwright.browserstack.config.ts && npm run postplaywright",
     "playwright:ipad": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=ipad && npm run postplaywright",
     "playwright:ios": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=ios && npm run postplaywright",
     "playwright:osx": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=osx && npm run postplaywright",
