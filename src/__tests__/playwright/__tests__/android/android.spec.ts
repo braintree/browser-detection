@@ -2,8 +2,6 @@
 /* eslint-disable no-undefined */
 import { test, expect, Page } from "@playwright/test";
 
-test.describe.configure({ mode: "serial" });
-
 test.describe("on android devices", () => {
   let userAgent: string;
 

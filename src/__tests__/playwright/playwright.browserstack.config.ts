@@ -72,9 +72,8 @@ const createMobileAppleProjects = (platform: "ios" | "ipad") => {
 
 export default defineConfig({
   globalSetup: require.resolve("./scripts/playwright.browserstack.setup.ts"),
-  globalTeardown: require.resolve(
-    "./scripts/playwright.browserstack.teardown.ts",
-  ),
+  globalTeardown:
+    require.resolve("./scripts/playwright.browserstack.teardown.ts"),
 
   projects: [
     ...createWebProjects("windows"),
