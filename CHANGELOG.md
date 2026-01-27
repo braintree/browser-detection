@@ -13,6 +13,20 @@
   - add `browserify-derequire` dependency 1.1.1
   - add `browserstack-local` dependency 1.5.8
   - add `dotenv` dependency 16.4.7
+- Update dependencies
+  - @playwright/test to 1.58.0
+  - @types/jest to 30.0.0
+  - @types/node to 25.0.3
+  - @typescript-eslint/eslint-plugin to 5.62.0
+  - dotenv to 17.2.3
+  - eslint to 8.57.1
+  - eslint-plugin-prettier to 5.5.4
+  - jest to 30.2.0
+  - prettier to 3.7.4
+  - ts-jest to 29.4.6
+  - typescript to 5.9.3
+- Update Node to v24
+
 
 ## 2.1.0
 
