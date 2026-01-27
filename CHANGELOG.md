@@ -6,8 +6,10 @@
   - iOS (iPhone and iPad)
   - OS X
   - Windows
+  - Android
 - New dependencies
   - add `@playwright/test` dependency 1.57.0
+  - add `browserstack-node-sdk` dependency 1.49.3
   - add `browserify-derequire` dependency 1.1.1
   - add `browserstack-local` dependency 1.5.8
   - add `dotenv` dependency 16.4.7

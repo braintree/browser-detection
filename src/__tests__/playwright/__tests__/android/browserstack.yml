@@ -1,0 +1,22 @@
+# it seems browserstack does not support using the regular playwright config for running android tests
+# so we have to use the default browserstack.yml configuration instead of using the projects to run tests
+
+userName: ${BROWSERSTACK_USERNAME}
+accessKey: ${BROWSERSTACK_ACCESS_KEY}
+
+projectName: Browser-Detection Browserstack Tests
+buildName: "android"
+buildIdentifier: "#${BUILD_NUMBER}"
+
+platforms:
+  - browserName: chrome
+    osVersion: 10.0
+    deviceName: Samsung Galaxy S20
+
+parallelsPerPlatform: 1
+
+browserstackLocal: true
+framework: playwright
+source: node-js-playwright-sample-sdk:v1
+
+envFile: ../../../../../.env
