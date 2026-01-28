@@ -1,6 +1,6 @@
 # Browser Detection - Release Notes
 
-## UNRELEASED
+## 2.1.1
 
 - Added Playwright tests that can run against Browserstack
   - iOS (iPhone and iPad)
@@ -26,7 +26,6 @@
   - ts-jest to 29.4.6
   - typescript to 5.9.3
 - Update Node to v24
-
 
 ## 2.1.0
 
