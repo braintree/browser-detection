@@ -20,6 +20,7 @@
     "eslint": "^8.57.1",
     "eslint-config-braintree": "^6.0.0-typescript-prep-rc.2",
     "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^29.6.3",
     "prettier": "^3.7.4",
@@ -46,7 +47,8 @@
     "playwright:ios": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=ios && npm run postplaywright",
     "playwright:osx": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=osx && npm run postplaywright",
     "playwright:windows": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts --project=windows && npm run postplaywright",
-    "version": "./version"
+    "version": "./version",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
