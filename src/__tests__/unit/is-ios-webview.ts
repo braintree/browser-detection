@@ -65,4 +65,21 @@ describe("isIosWebview", () => {
   it("returns true for Google Search App", () => {
     expect(isIosWebview(AGENTS.iPhoneGoogleSearchAppWebview)).toBe(true);
   });
+
+  it("returns true for iPad webview", () => {
+    expect(isIosWebview(AGENTS.iPadWebview)).toBe(true);
+  });
+
+  it("returns true for iPod webview", () => {
+    expect(isIosWebview(AGENTS.iPodWebview)).toBe(true);
+  });
+
+  it("returns true for Facebook in-app browser on iOS", () => {
+    expect(isIosWebview(AGENTS.iPhoneFacebookWebview)).toBe(true);
+  });
+
+  it("returns false for iOS Safari in-app UA with Safari token", () => {
+    // UA contains 'Safari' so should not be treated as a webview
+    expect(isIosWebview(AGENTS.iPhone_15_5_SafariInApp)).toBe(false);
+  });
 });

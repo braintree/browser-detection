@@ -9,8 +9,7 @@ export = function isIosWebview(ua?: string): boolean {
     if (isIosGoogleSearchApp(ua)) {
       return true;
     }
-    // Historically, a webview could be identified by the presence of AppleWebKit and _no_ presence of Safari after.
-    return /.+AppleWebKit(?!.*Safari)/i.test(ua);
+    return /AppleWebKit/i.test(ua) && !/Safari/i.test(ua);
   }
 
   return false;
