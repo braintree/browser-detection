@@ -1,5 +1,9 @@
 # Browser Detection - Release Notes
 
+## UNRELEASED
+
+- Fix iOS webview detection for user agents matching certain patterns
+
 ## 2.1.1
 
 - Added Playwright tests that can run against Browserstack
