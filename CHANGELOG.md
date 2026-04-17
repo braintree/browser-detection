@@ -1,8 +1,9 @@
-# Browser Detection - Release Notes
+# CHANGELOG
 
 ## UNRELEASED
 
 - Fix iOS webview detection for user agents matching certain patterns
+- feat(deps): Add [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to the repo
 
 ## 2.1.1
 
