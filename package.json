@@ -69,7 +69,8 @@
     "resetMocks": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "!src/__tests__/**"
     ],
     "coverageThreshold": {
       "global": {
