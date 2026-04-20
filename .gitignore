@@ -10,3 +10,4 @@ blob-report/
 playwright/.cache/
 playwright/.auth/
 local.log
+coverage/

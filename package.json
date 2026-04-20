@@ -66,7 +66,20 @@
     "testEnvironment": "jsdom",
     "preset": "ts-jest",
     "restoreMocks": true,
-    "resetMocks": true
+    "resetMocks": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/__tests__/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 80,
+        "statements": 80,
+        "branches": 80,
+        "functions": 80
+      }
+    }
   },
   "dependencies": {
     "detectincognitojs": "1.6.2"
