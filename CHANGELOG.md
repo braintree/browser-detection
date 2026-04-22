@@ -1,8 +1,9 @@
-# Browser Detection - Release Notes
+# CHANGELOG
 
 ## UNRELEASED
 
 - Fix iOS webview detection for user agents matching certain patterns
+- feat(deps): Add [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to the repo
 
 ## 2.1.1
 
@@ -76,7 +77,7 @@
 - Remove window.safari object validation from iOS webview.
 - Update `is-ios` to account for user agent behavior on newer iPads
 - Add `is-ipados` method
-- Typoed version number so we are skipping all the way to 1.16.0
+- Typo-ed version number so we are skipping all the way to 1.16.0
 
 ## 1.13.0 (2022-07-14)
 
