@@ -1,10 +1,13 @@
 import isChrome = require("../../is-chrome");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isChrome", () => {
+  restoreWindow();
+
   it("false when IE9", () => {
     expect(isChrome(AGENTS.ie9)).toBe(false);
   });
@@ -33,6 +36,14 @@ describe("isChrome", () => {
 
   it("returns false for old Android Chromium-based WebViews", () => {
     expect(isChrome(AGENTS.androidChromeWebviewOld)).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidPhoneChrome,
+      configurable: true,
+    });
+    expect(isChrome()).toBe(true);
   });
 
   it("returns false for other browsers", () => {

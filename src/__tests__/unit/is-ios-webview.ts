@@ -1,10 +1,13 @@
 import isIosWebview = require("../../is-ios-webview");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isIosWebview", () => {
+  restoreWindow();
+
   it("returns true for iOS webviews", () => {
     let key, ua;
     for (key in AGENTS) {
@@ -60,6 +63,14 @@ describe("isIosWebview", () => {
         }
       }
     }
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.iPhoneWebview,
+      configurable: true,
+    });
+    expect(isIosWebview()).toBe(true);
   });
 
   it("returns true for Google Search App", () => {

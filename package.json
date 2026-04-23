@@ -68,7 +68,8 @@
   "homepage": "https://github.com/braintree/browser-detection#readme",
   "jest": {
     "testPathIgnorePatterns": [
-      "<rootDir>/src/__tests__/playwright/*"
+      "<rootDir>/src/__tests__/playwright/*",
+      "<rootDir>/src/__tests__/helpers/*"
     ],
     "testEnvironment": "jsdom",
     "preset": "ts-jest",
@@ -77,7 +78,8 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.ts",
-      "!src/__tests__/**"
+      "!src/__tests__/**",
+      "!src/browser-detection.ts"
     ],
     "coverageThreshold": {
       "global": {

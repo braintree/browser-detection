@@ -69,4 +69,12 @@ describe("supportsPaymentRequestApi", () => {
     expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome)).toBe(false);
     expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome_60)).toBe(false);
   });
+
+  it("returns false for a Chrome-identified UA without a parseable version string", () => {
+    // Covers the !match branch in isSupportedChromeVersion — a defensive path for
+    // malformed UAs that isChrome() accepts but have no "Chrome/NN." version token.
+    expect(
+      supportsPaymentRequestApi("Mozilla/5.0 Chrome Mobile Safari/537.36"),
+    ).toBe(false);
+  });
 });
