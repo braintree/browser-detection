@@ -1,10 +1,13 @@
 import supportsPaymentRequestApi = require("../../supports-payment-request-api");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("supportsPaymentRequestApi", () => {
+  restoreWindow();
+
   beforeEach(() => {
     window.PaymentRequest = function () {
       // noop
@@ -76,5 +79,14 @@ describe("supportsPaymentRequestApi", () => {
     expect(
       supportsPaymentRequestApi("Mozilla/5.0 Chrome Mobile Safari/537.36"),
     ).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.pcChrome_61,
+      configurable: true,
+    });
+
+    expect(supportsPaymentRequestApi()).toBe(true);
   });
 });
