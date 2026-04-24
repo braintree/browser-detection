@@ -7,9 +7,7 @@ import isChrome = require("./is-chrome");
 import isSamsungBrowser = require("./is-samsung");
 import isDuckDuckGo = require("./is-duckduckgo");
 
-function isUnsupportedIosChrome(ua?: string): boolean {
-  ua = ua || window.navigator.userAgent;
-
+function isUnsupportedIosChrome(ua: string): boolean {
   const match = ua.match(/CriOS\/(\d+)\./);
 
   if (!match) {
@@ -21,16 +19,13 @@ function isUnsupportedIosChrome(ua?: string): boolean {
   return version < MINIMUM_SUPPORTED_CHROME_IOS_VERSION;
 }
 
-function isOperaMini(ua?: string): boolean {
-  ua = ua || window.navigator.userAgent;
-
+function isOperaMini(ua: string): boolean {
   return ua.indexOf("Opera Mini") > -1;
 }
 
-function isAndroidWebview(ua?: string): boolean {
+function isAndroidWebview(ua: string): boolean {
   const androidWebviewRegExp = /Version\/[\d.]+/i;
 
-  ua = ua || window.navigator.userAgent;
   if (isAndroid(ua)) {
     return (
       androidWebviewRegExp.test(ua) && !isOperaMini(ua) && !isDuckDuckGo(ua)

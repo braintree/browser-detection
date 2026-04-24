@@ -1,10 +1,13 @@
 import isOpera = require("../../is-opera");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isOpera", () => {
+  restoreWindow();
+
   it("returns true for android Opera", () => {
     expect(isOpera(AGENTS.androidOpera)).toBe(true);
   });
@@ -23,6 +26,14 @@ describe("isOpera", () => {
 
   it("returns true for windows Opera", () => {
     expect(isOpera(AGENTS.pcOpera)).toBe(true);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidOpera,
+      configurable: true,
+    });
+    expect(isOpera()).toBe(true);
   });
 
   it("returns false for all other browsers", () => {

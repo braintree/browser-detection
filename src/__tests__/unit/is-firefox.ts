@@ -1,10 +1,13 @@
 import isFirefox = require("../../is-firefox");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isFirefox", () => {
+  restoreWindow();
+
   it("returns true for android phone Firefox", () => {
     expect(isFirefox(AGENTS.androidPhoneFirefox)).toBe(true);
   });
@@ -15,6 +18,14 @@ describe("isFirefox", () => {
 
   it("returns false for ios Firefox (simply a safari webview)", () => {
     expect(isFirefox(AGENTS.iPhoneFirefox)).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidPhoneFirefox,
+      configurable: true,
+    });
+    expect(isFirefox()).toBe(true);
   });
 
   it("returns true for desktop Firefox", () => {

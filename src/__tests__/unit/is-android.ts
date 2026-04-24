@@ -1,10 +1,13 @@
 import isAndroid = require("../../is-android");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isAndroid", () => {
+  restoreWindow();
+
   it("returns true for Android browsers", () => {
     expect(isAndroid(AGENTS.androidOperaMini)).toBe(true);
     expect(isAndroid(AGENTS.androidPhoneFirefox)).toBe(true);
@@ -19,6 +22,14 @@ describe("isAndroid", () => {
     expect(isAndroid(AGENTS.androidChromeWebviewKitKatLollipop)).toBe(true);
     expect(isAndroid(AGENTS.androidChromeWebviewLollipopAndAbove)).toBe(true);
     expect(isAndroid(AGENTS.androidPhoneChrome_101FacebookWebview)).toBe(true);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidPhoneChrome,
+      configurable: true,
+    });
+    expect(isAndroid()).toBe(true);
   });
 
   it("returns false for non-Android browsers", () => {

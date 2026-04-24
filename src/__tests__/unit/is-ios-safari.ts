@@ -1,10 +1,13 @@
 import isIosSafari = require("../../is-ios-safari");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isIosSafari", () => {
+  restoreWindow();
+
   it("returns true for iOS Safari", () => {
     expect(isIosSafari(AGENTS.iPhone_9_3_1Safari)).toBe(true);
     expect(isIosSafari(AGENTS.iPhone_3_2Safari)).toBe(true);
@@ -31,6 +34,14 @@ describe("isIosSafari", () => {
 
   it("returns false for Android Chrome", () => {
     expect(isIosSafari(AGENTS.androidPhoneChrome)).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.iPhone_9_3_1Safari,
+      configurable: true,
+    });
+    expect(isIosSafari()).toBe(true);
   });
 
   it("returns false for desktop Safari", () => {

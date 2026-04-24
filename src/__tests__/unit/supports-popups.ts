@@ -1,22 +1,13 @@
 import supportsPopups = require("../../supports-popups");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
-type WindowSafari = {
-  // Disabling rule here because we don't really care is on the safari object beyond 'pushNotifications'.
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  pushNotifications: any;
-  [key: string]: any;
-};
-declare global {
-  interface Window {
-    safari?: Partial<WindowSafari>;
-  }
-}
-
 describe("supportsPopups", () => {
+  restoreWindow();
+
   it("returns false for webviews", () => {
     let key, ua;
 
@@ -74,5 +65,13 @@ describe("supportsPopups", () => {
 
   it("returns false for old unsupported Samsung browser", () => {
     expect(supportsPopups(AGENTS.androidSamsungUnsupported)).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidPhoneChrome,
+      configurable: true,
+    });
+    expect(supportsPopups()).toBe(true);
   });
 });
