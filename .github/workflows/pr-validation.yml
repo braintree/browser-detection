@@ -12,6 +12,8 @@ on:
 jobs:
   pr-title-check:
     name: "Validate PR title"
+    permissions:
+      pull-requests: read
     if: >-
       github.actor != 'dependabot[bot]' &&
       !contains(github.actor, '[bot]') &&
