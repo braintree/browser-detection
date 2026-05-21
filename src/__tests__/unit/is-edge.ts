@@ -1,10 +1,13 @@
 import isEdge = require("../../is-edge");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isEdge", () => {
+  restoreWindow();
+
   it("returns false when chrome", () => {
     expect(isEdge(AGENTS.pcChrome_41)).toBe(false);
   });
@@ -31,5 +34,13 @@ describe("isEdge", () => {
 
   it("returns true when Edge 103", () => {
     expect(isEdge(AGENTS.edge103)).toBe(true);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.edge103,
+      configurable: true,
+    });
+    expect(isEdge()).toBe(true);
   });
 });

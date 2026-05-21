@@ -1,10 +1,13 @@
 import isMobileFirefox = require("../../is-mobile-firefox");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isMobileFirefox", () => {
+  restoreWindow();
+
   it("returns true for iPhone Firefox", () => {
     expect(isMobileFirefox(AGENTS.iPhoneFirefox)).toBe(true);
   });
@@ -34,6 +37,14 @@ describe("isMobileFirefox", () => {
         expect(isMobileFirefox(ua)).toBe(false);
       }
     });
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidPhoneFirefox,
+      configurable: true,
+    });
+    expect(isMobileFirefox()).toBe(true);
   });
 
   it("returns false for all other browsers", () => {

@@ -1,10 +1,13 @@
 import isSafari = require("../../is-safari");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isSafari", () => {
+  restoreWindow();
+
   it("returns true when desktop safari", () => {
     expect(isSafari(AGENTS.macSafari7_0_2)).toBe(true);
     expect(isSafari(AGENTS.pcSafari5_1)).toBe(true);
@@ -45,6 +48,14 @@ describe("isSafari", () => {
   it("returns false when desktop edge", () => {
     expect(isSafari(AGENTS.edge12)).toBe(false);
     expect(isSafari(AGENTS.edge13)).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.macSafari7_0_2,
+      configurable: true,
+    });
+    expect(isSafari()).toBe(true);
   });
 
   it("returns false for all android browsers", () => {

@@ -1,10 +1,13 @@
 import isChromeOS = require("../../is-chrome-os");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isChromeOS", () => {
+  restoreWindow();
+
   it("returns true for ChromeOS Chrome", () => {
     expect(isChromeOS(AGENTS.chromeOsChrome)).toBe(true);
   });
@@ -14,6 +17,14 @@ describe("isChromeOS", () => {
     // questionably functional Android port. For example Firefox & Brave
     // have Android user agents, and Edge installs but doesn't actually
     // work.
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.chromeOsChrome,
+      configurable: true,
+    });
+    expect(isChromeOS()).toBe(true);
   });
 
   it("returns false for non-ChromeOS browsers", () => {

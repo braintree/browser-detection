@@ -1,10 +1,13 @@
 import supportsPaymentRequestApi = require("../../supports-payment-request-api");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("supportsPaymentRequestApi", () => {
+  restoreWindow();
+
   beforeEach(() => {
     window.PaymentRequest = function () {
       // noop
@@ -68,5 +71,22 @@ describe("supportsPaymentRequestApi", () => {
   it("returns false for Android Chrome versions less than 61", () => {
     expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome)).toBe(false);
     expect(supportsPaymentRequestApi(AGENTS.androidPhoneChrome_60)).toBe(false);
+  });
+
+  it("returns false for a Chrome-identified UA without a parseable version string", () => {
+    // Covers the !match branch in isSupportedChromeVersion — a defensive path for
+    // malformed UAs that isChrome() accepts but have no "Chrome/NN." version token.
+    expect(
+      supportsPaymentRequestApi("Mozilla/5.0 Chrome Mobile Safari/537.36"),
+    ).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.pcChrome_61,
+      configurable: true,
+    });
+
+    expect(supportsPaymentRequestApi()).toBe(true);
   });
 });

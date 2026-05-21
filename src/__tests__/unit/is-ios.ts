@@ -1,4 +1,5 @@
 import isIos = require("../../is-ios");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
@@ -9,6 +10,8 @@ const DOCUMENT_OBJECT = {
 };
 
 describe("isIos", () => {
+  restoreWindow();
+
   it("returns true for an iPad version lower than iPad OS v13", () => {
     expect(isIos(AGENTS.iPad3_2Safari)).toBe(true);
     expect(isIos(AGENTS.iPad5_1Safari)).toBe(true);
@@ -49,6 +52,14 @@ describe("isIos", () => {
         expect(isIos(ua)).toBe(false);
       }
     }
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.iPhone_9_3_1Safari,
+      configurable: true,
+    });
+    expect(isIos()).toBe(true);
   });
 
   it("return false for for iPad OS v13 when passing false for checkiPadOS", () => {

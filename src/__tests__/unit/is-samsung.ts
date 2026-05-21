@@ -1,10 +1,13 @@
 import isSamsungBrowser = require("../../is-samsung");
+import { restoreWindow } from "../helpers/restore-window";
 
 const AGENTS: {
   [key: string]: string;
 } = require("../helpers/user-agents.json");
 
 describe("isSamsungBrowser", () => {
+  restoreWindow();
+
   it("returns true for Samsung browser", () => {
     expect(isSamsungBrowser(AGENTS.androidSamsung)).toBe(true);
   });
@@ -15,6 +18,14 @@ describe("isSamsungBrowser", () => {
 
   it("returns false for Samsung webviews", () => {
     expect(isSamsungBrowser(AGENTS.androidSamsungWebview)).toBe(false);
+  });
+
+  it("uses window.navigator.userAgent when no argument is provided", () => {
+    Object.defineProperty(window.navigator, "userAgent", {
+      value: AGENTS.androidSamsung,
+      configurable: true,
+    });
+    expect(isSamsungBrowser()).toBe(true);
   });
 
   it("returns false for all other browsers", () => {
