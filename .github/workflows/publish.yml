@@ -13,14 +13,15 @@ on:
           - minor
           - major
 
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
 jobs:
   publish:
-    uses: braintree/web-sdk-github-actions/.github/workflows/publish.yml@main
+    uses: braintree/web-sdk-github-actions/.github/workflows/release-pipeline.yml@b33ee0708a89181769b44cc4739dca46ac53e8ce # main
     with:
       version-type: ${{ inputs.version_type }}
     secrets:
       npm-token: ${{ secrets.BRAINTREE_NPM_ACCESS_TOKEN }}
-    permissions:
-      contents: write
-      pull-requests: write
-      id-token: write
