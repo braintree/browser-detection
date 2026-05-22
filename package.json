@@ -41,7 +41,7 @@
     "pretest": "npm run build",
     "test": "jest",
     "start": "npx http-server . -p 8080",
-    "preplaywright": "npm run build && rm dist/browser-detection.bundle.js && npx browserify dist/browser-detection.js -o dist/browser-detection.bundle.js --standalone browserDetection",
+    "preplaywright": "npm run build && rm -f dist/browser-detection.bundle.js && npx browserify dist/browser-detection.js -o dist/browser-detection.bundle.js --standalone browserDetection",
     "postplaywright": "npm run clean:playwright",
     "playwright": "npx playwright test --config=src/__tests__/playwright/playwright.browserstack.config.ts && npm run playwright:android",
     "playwright:local": "npm run preplaywright && npx playwright test --config=src/__tests__/playwright/playwright.local.ts && npm run postplaywright",
