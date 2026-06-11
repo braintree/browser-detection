@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   ci:
-    uses: braintree/web-sdk-github-actions/.github/workflows/ci.yml@6b7ac15369729749c24a9df0f1285addc4554a82
+    uses: braintree/web-sdk-github-actions/.github/workflows/ci.yml@7a0129438dde00a728cc851ce2cab9820bb264ed  # main
 
   integration-test:
     name: "Integration Tests (BrowserStack)"
