@@ -54,7 +54,7 @@
   ],
   "ios": [
     {
-      "deviceName": "iPhone SE 2020",
+      "deviceName": "iPhone SE 2022",
       "browserName": "safari",
       "osVersion": "16.4"
     }
