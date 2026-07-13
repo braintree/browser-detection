@@ -1,5 +1,5 @@
-import detectIncognito = require("detectincognitojs");
+import { detectIncognito } from "detectincognitojs";
 
-export = function isIncognito() {
-  return detectIncognito.detectIncognito();
-};
+export function isIncognito() {
+  return detectIncognito();
+}
