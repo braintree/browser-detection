@@ -1,9 +1,7 @@
-import isAndroid = require("../../is-android");
+import { isAndroid } from "../../is-android";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isAndroid", () => {
   restoreWindow();

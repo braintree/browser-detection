@@ -1,9 +1,7 @@
-import isDuckDuckGo = require("../../is-duckduckgo");
+import { isDuckDuckGo } from "../../is-duckduckgo";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isDuckDuckGo", () => {
   restoreWindow();

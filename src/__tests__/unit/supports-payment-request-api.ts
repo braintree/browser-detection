@@ -1,9 +1,7 @@
-import supportsPaymentRequestApi = require("../../supports-payment-request-api");
+import { supportsPaymentRequestApi } from "../../supports-payment-request-api";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("supportsPaymentRequestApi", () => {
   restoreWindow();

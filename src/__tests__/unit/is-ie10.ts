@@ -1,9 +1,7 @@
-import isIe10 = require("../../is-ie10");
+import { isIe10 } from "../../is-ie10";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isIe10", () => {
   restoreWindow();
