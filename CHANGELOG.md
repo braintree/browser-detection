@@ -2,6 +2,7 @@
 
 ## UNRELEASED
 
+- **Breaking:** Remove root-level `.js` shim files and standardize on a single package entrypoint.
 - Fix iOS webview detection for user agents matching certain patterns
 - feat(deps): Add [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to the repo
 
