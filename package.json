@@ -4,9 +4,14 @@
   "description": "A small lib to detect browser compatibility for braintree products",
   "main": "dist/browser-detection.js",
   "types": "dist/browser-detection.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/browser-detection.d.ts",
+      "default": "./dist/browser-detection.js"
+    }
+  },
   "files": [
-    "dist",
-    "*.js"
+    "dist"
   ],
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
