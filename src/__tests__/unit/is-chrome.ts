@@ -1,9 +1,7 @@
-import isChrome = require("../../is-chrome");
+import { isChrome } from "../../is-chrome";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isChrome", () => {
   restoreWindow();

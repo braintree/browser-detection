@@ -1,9 +1,7 @@
-import isMobileFirefox = require("../../is-mobile-firefox");
+import { isMobileFirefox } from "../../is-mobile-firefox";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isMobileFirefox", () => {
   restoreWindow();

@@ -1,6 +1,6 @@
-import isIpadOS = require("./is-ipados");
+import { isIpadOS } from "./is-ipados";
 
-export = function isIos(
+export function isIos(
   ua?: string,
   checkIpadOS = true,
   document?: object,
@@ -8,4 +8,4 @@ export = function isIos(
   ua = ua || window.navigator.userAgent;
   const iOsTest = /iPhone|iPod|iPad/i.test(ua);
   return checkIpadOS ? iOsTest || isIpadOS(ua, document) : iOsTest;
-};
+}

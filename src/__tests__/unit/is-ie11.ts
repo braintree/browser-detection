@@ -1,9 +1,7 @@
-import isIe11 = require("../../is-ie11");
+import { isIe11 } from "../../is-ie11";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isIe11", () => {
   restoreWindow();

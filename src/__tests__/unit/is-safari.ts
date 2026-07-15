@@ -1,9 +1,7 @@
-import isSafari = require("../../is-safari");
+import { isSafari } from "../../is-safari";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isSafari", () => {
   restoreWindow();

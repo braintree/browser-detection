@@ -1,9 +1,7 @@
-import isIosUIWebview = require("../../is-ios-uiwebview");
+import { isIosUIWebview } from "../../is-ios-uiwebview";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isIosUIWebview", () => {
   restoreWindow();

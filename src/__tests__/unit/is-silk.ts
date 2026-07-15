@@ -1,9 +1,7 @@
-import isSilk = require("../../is-silk");
+import { isSilk } from "../../is-silk";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isSilk", () => {
   restoreWindow();

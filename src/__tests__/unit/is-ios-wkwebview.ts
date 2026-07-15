@@ -1,9 +1,7 @@
-import isIosWKWebview = require("../../is-ios-wkwebview");
+import { isIosWKWebview } from "../../is-ios-wkwebview";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isIosWKWebview", () => {
   restoreWindow();

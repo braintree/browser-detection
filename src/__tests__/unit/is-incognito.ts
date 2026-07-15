@@ -1,5 +1,5 @@
-import isIncognito = require("../../is-incognito");
-import detectIncognito = require("detectincognitojs");
+import { isIncognito } from "../../is-incognito";
+import { detectIncognito } from "detectincognitojs";
 
 jest.mock("detectincognitojs", () => ({
   detectIncognito: jest.fn(() => Promise.resolve()),
@@ -8,6 +8,6 @@ jest.mock("detectincognitojs", () => ({
 describe("isIncognito", () => {
   it("should call detectIncognito", async () => {
     await isIncognito();
-    expect(detectIncognito.detectIncognito).toHaveBeenCalled();
+    expect(detectIncognito).toHaveBeenCalled();
   });
 });

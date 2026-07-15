@@ -1,9 +1,7 @@
-import isOpera = require("../../is-opera");
+import { isOpera } from "../../is-opera";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isOpera", () => {
   restoreWindow();

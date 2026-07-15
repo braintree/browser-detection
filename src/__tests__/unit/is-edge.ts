@@ -1,9 +1,7 @@
-import isEdge = require("../../is-edge");
+import { isEdge } from "../../is-edge";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isEdge", () => {
   restoreWindow();

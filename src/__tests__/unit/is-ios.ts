@@ -1,9 +1,7 @@
-import isIos = require("../../is-ios");
+import { isIos } from "../../is-ios";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 const DOCUMENT_OBJECT = {
   ontouchend: null,

@@ -1,9 +1,7 @@
-import isIosFirefox = require("../../is-ios-firefox");
+import { isIosFirefox } from "../../is-ios-firefox";
 import { restoreWindow } from "../helpers/restore-window";
 
-const AGENTS: {
-  [key: string]: string;
-} = require("../helpers/user-agents.json");
+import AGENTS from "../helpers/user-agents";
 
 describe("isIosFirefox", () => {
   restoreWindow();
